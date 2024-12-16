@@ -187,13 +187,15 @@
             <form id="login-form">
                 <div class="input-group">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <input type="text" id="username" placeholder="Enter your username" required autofocus autocomplete=true>
                 </div>
                 <div class="input-group">
                     <label for="password">Password:</label>
                     <input type="password" id="password" placeholder="Enter your password" required>
                 </div>
+                <a href="Home.html">
                 <button type="submit">Login</button>
+                    </a>
             </form>
         </main>
 
@@ -244,7 +246,7 @@ function fun() {
                     showConfirmButton: false,
                     timer: 2000
                 }).then(() => {
-                    window.location.href = "https://mohammed-alaa-mohammed.github.io/Portfolio/";
+                    window.location.href = "Home.html";
                 });
             } else {
                 Swal.fire({
