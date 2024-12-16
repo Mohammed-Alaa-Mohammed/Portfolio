@@ -649,7 +649,8 @@
     <p id="today-visits" class="p-p" dir="rtl"></p>
     <p id="current-time" class="p-p" dir="rtl"></p>
     <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" dir="rtl">إعادة تعيين الزيارات</button>
-    <div id="user-info" class="user-info"></div>
+    <br>
+    <div id="user-info" class="user-info" dir="rtl"></div>
 </section>
 
 <script>
@@ -762,6 +763,7 @@
     const lastVisitOS = visitDetails[visitDetails.length - 1].operatingSystem;
 
     userInfoDiv.innerHTML = `
+        <br>
         <h4>آخر زيارة:</h4>
         <p>التاريخ: ${lastVisitTime}</p>
         <p>الجهاز: ${lastVisitDeviceType}</p>
