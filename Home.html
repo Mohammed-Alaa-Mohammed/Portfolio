@@ -476,64 +476,114 @@
         <input type="text" id="search-input" placeholder="ابحث عن الكورس..." style="padding: 8px; width: 100%; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
     </div>
 
+    <!-- إضافة الفلترة -->
+    <div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+        <select id="filter-date" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+            <option value="">تصفية حسب التاريخ</option>
+            <option value="newest">الأحدث</option>
+            <option value="oldest">الأقدم</option>
+        </select>
+        <select id="filter-type" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+            <option value="">تصفية حسب النوع</option>
+            <option value="free">مجاني</option>
+            <option value="paid">مدفوع</option>
+        </select>
+    </div>
+
     <!-- الكورسات -->
-    <div class="course-core">
-        <h3>دورة HTML الأساسية</h3>
-        <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
-        <b>م / أســـامــة الـــزيـــرو</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
-        <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank">ابدأ الآن</a>
-    </div>
+    <div id="courses-container">
+        <div class="course-core" data-date="2023-12-10" data-type="free">
+            <h3>دورة HTML الأساسية</h3>
+            <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
+            <b>م / أســـامــة الـــزيـــرو</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+            <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank">ابدأ الآن</a>
+        </div>
 
-    <div class="course-core">
-        <h3>دورة CSS المتقدمة</h3>
-        <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
-        <b dir="auto">م / محمد علاء محمد</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">70$</p>
-        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
-    </div>
+        <div class="course-core" data-date="2023-11-15" data-type="paid">
+            <h3>دورة CSS المتقدمة</h3>
+            <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
+            <b dir="auto">م / محمد علاء محمد</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
+            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        </div>
 
-    <!-- إضافة كورسات جديدة في البرمجة -->
-    <div class="course-core">
-        <h3>دورة JavaScript للمبتدئين</h3>
-        <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
-         <b>م / أســـامــة الـــزيـــرو</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
-        <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
-    </div>
+        <div class="course-core" data-date="2024-01-05" data-type="free">
+            <h3>دورة JavaScript للمبتدئين</h3>
+            <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
+            <b>م / أســـامــة الـــزيـــرو</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+            <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
+        </div>
 
-    <div class="course-core">
-        <h3>دورة Python للمبتدئين</h3>
-        <p>تعلم البرمجة باستخدام Python من البداية.</p>
-        <b>قناه / freecodecamp</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
-        <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLzMcBGfZo4-kAqvR7chET9uD7lx3s8Xto" class="btn-core" target="_blank">ابدأ الآن</a>
-    </div>
+        <div class="course-core" data-date="2023-12-01" data-type="free">
+            <h3>دورة Python للمبتدئين</h3>
+            <p>تعلم البرمجة باستخدام Python من البداية.</p>
+            <b>قناه / freecodecamp</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+            <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLzMcBGfZo4-kAqvR7chET9uD7lx3s8Xto" class="btn-core" target="_blank">ابدأ الآن</a>
+        </div>
 
-    <div class="course-core">
-        <h3>دورة React JS للمطورين</h3>
-        <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
-        <b>م / يوسف محمود</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">100$</p>
-        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
-    </div>
+        <div class="course-core" data-date="2024-02-20" data-type="paid">
+            <h3>دورة React JS للمطورين</h3>
+            <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
+            <b>م / يوسف محمود</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
+            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        </div>
 
-    <div class="course-core">
-        <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
-        <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
-        <b>م / فاطمة صلاح</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">80$</p>
-        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
-    </div>
+        <div class="course-core" data-date="2023-11-20" data-type="paid">
+            <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
+            <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
+            <b>م / فاطمة صلاح</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
+            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        </div>
 
-    <div class="course-core">
-        <h3>دورة تطوير الألعاب باستخدام Unity</h3>
-        <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
-        <b>م / خالد إبراهيم</b>
-        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">120$</p>
-        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        <div class="course-core" data-date="2023-10-30" data-type="paid">
+            <h3>دورة تطوير الألعاب باستخدام Unity</h3>
+            <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
+            <b>م / خالد إبراهيم</b>
+            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
+            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('search-input').addEventListener('input', function () {
+        const query = this.value.toLowerCase();
+        const courses = document.querySelectorAll('.course-core');
+        courses.forEach(course => {
+            const title = course.querySelector('h3').textContent.toLowerCase();
+            course.style.display = title.includes(query) ? 'block' : 'none';
+        });
+    });
+
+    document.getElementById('filter-date').addEventListener('change', function () {
+        const courses = Array.from(document.querySelectorAll('.course-core'));
+        const value = this.value;
+
+        if (value === 'newest') {
+            courses.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+        } else if (value === 'oldest') {
+            courses.sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date));
+        }
+
+        const container = document.getElementById('courses-container');
+        container.innerHTML = '';
+        courses.forEach(course => container.appendChild(course));
+    });
+
+    document.getElementById('filter-type').addEventListener('change', function () {
+        const value = this.value;
+        const courses = document.querySelectorAll('.course-core');
+        courses.forEach(course => {
+            course.style.display = (value === '' || course.dataset.type === value) ? 'block' : 'none';
+        });
+    });
+</script>
+
 
 <script>
     // دالة البحث عن الكورسات
