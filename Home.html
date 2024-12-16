@@ -643,8 +643,7 @@
         background-color: #0056b3;
     }
 </style>
-
-<section class="section fade-in" dir="rtl" id="count">
+<section class="section fade-in" dir="rtl">
     <h2 id="greeting" class="h-h"></h2>
     <h4 class="h-h" dir="rtl">عدد زوار الموقع : <span id="visitor-count" dir="rtl">0</span></h4>
     <p id="today-visits" class="p-p" dir="rtl"></p>
@@ -703,7 +702,7 @@
 
     // جلب سجل جميع الزيارات
     let visitsData = JSON.parse(localStorage.getItem("visitsData")) || {};
-    let totalVisits = localStorage.getItem("totalVisits") || 0;
+    let totalVisits = parseInt(localStorage.getItem("totalVisits")) || 0;
 
     // التحقق من سجل الجهاز الحالي
     if (!visitsData[deviceId]) {
@@ -713,7 +712,6 @@
             visitCount: 1,
             lastVisit: new Date().toISOString()
         };
-        totalVisits++; // زيادة العدد الإجمالي للزوار
     } else {
         // حساب الوقت منذ آخر زيارة
         const lastVisit = visitsData[deviceId].lastVisit;
@@ -721,10 +719,12 @@
 
         if (hoursSinceLastVisit >= 24) {
             visitsData[deviceId].visitCount++;
-            totalVisits++; // زيادة العدد الإجمالي للزوار
         }
         visitsData[deviceId].lastVisit = new Date().toISOString();
     }
+
+    // زيادة العدد الإجمالي للزوار عند كل زيارة
+    totalVisits++;
 
     // حفظ البيانات المُحدثة
     localStorage.setItem("visitsData", JSON.stringify(visitsData));
@@ -754,6 +754,7 @@
         location.reload();
     });
 </script>
+
 
 
 
