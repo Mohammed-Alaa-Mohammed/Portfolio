@@ -468,7 +468,15 @@
 </style>
       <!-- Coruses Section -->
 <section id="core" class="section fade-in" dir="auto" style="height:auto; background-color:#ffffff;">
+
     <b><h2 dir="ltr" style="display: block;font-weight: bold;">قسم الكورسات</h2></b>
+
+    <!-- إضافة مربع البحث -->
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="search-input" placeholder="ابحث عن الكورس..." style="padding: 8px; width: 100%; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+    </div>
+
+    <!-- الكورسات -->
     <div class="course-core">
         <h3>دورة HTML الأساسية</h3>
         <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
@@ -527,6 +535,27 @@
     </div>
 </section>
 
+<script>
+    // دالة البحث عن الكورسات
+    document.getElementById('search-input').addEventListener('input', function() {
+        var searchTerm = this.value.toLowerCase();
+        var courseSections = document.querySelectorAll('.course-core');
+
+        courseSections.forEach(function(course) {
+            var courseTitle = course.querySelector('h3').textContent.toLowerCase();
+            var courseDescription = course.querySelector('p').textContent.toLowerCase();
+
+            // إخفاء الكورس إذا لم يتطابق مع البحث
+            if (courseTitle.includes(searchTerm) || courseDescription.includes(searchTerm)) {
+                course.style.display = 'block';
+            } else {
+                course.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
                             <!--  جزء عدد الزوار  -->
 
 
@@ -569,7 +598,7 @@
     <h4 class="h-h">عدد زوار الموقع : <span id="visitor-count">0</span></h4>
     <p id="today-visits" class="p-p"></p>
     <p id="current-time" class="p-p"></p>
-    <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" disabled>إعادة تعيين الزيارات</button>
+    <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" >إعادة تعيين الزيارات</button>
 </section>
 
 <script>
@@ -652,9 +681,14 @@
     localStorage.setItem("todayVisits", JSON.stringify(todayVisits));
     document.getElementById("today-visits").textContent = `عدد زيارات اليوم: ${todayVisits.count}`;
 
-    // عرض الوقت الحالي
-    const currentTime = new Date().toLocaleString();
-    document.getElementById("current-time").textContent = `الوقت الحالي: ${currentTime}`;
+    // دالة لعرض الوقت الحالي بشكل مستمر
+    function updateTime() {
+        const currentTime = new Date().toLocaleString();
+        document.getElementById("current-time").textContent = `الوقت الحالي: ${currentTime}`;
+    }
+
+    // تحديث الوقت كل ثانية
+    setInterval(updateTime, 1000);
 
     // إضافة زر لإعادة تعيين العدادات
     document.getElementById("reset-btn").addEventListener("click", function() {
@@ -667,8 +701,6 @@
         location.reload();
     });
 </script>
-
-
 
 
 
