@@ -2,13 +2,12 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-
     <meta name="author" content="Mohammed Alaa Mohammed">
-    <meta http-equiv="refresh" content=1 , url=https://mohammed-alaa-mohammed.github.io/Portfolio/">
+    <meta http-equiv="refresh" content="12200; url=index.html">
     <meta name="generator" content="Pycharm">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <meta name="theme-color" content="#05091E">
+    <meta name="theme-color" content="#00000f">
     <title>Code Courses | Eng.Mohammed Alaa</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4762/4762311.png">
 <!--    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/cyber-security-vol-2-1/256/Website_Security.png">-->
@@ -227,11 +226,9 @@
         }
     </style>
 </head>
-<body>
+
     <!-- Navbar -->
     <nav class="navbar" dir="auto">
-
-
 
 
         <a href="#about">عن الموقع</a>
@@ -242,7 +239,7 @@
         <a href="#core">قسم الكورسات</a>
          <a href="#core" onclick="c();">ورشه العمل اونلاين</a>
         <a href="#notes">إرشادات </a>
-        <a href="Your_Profile.html"> الملف الشخصي</a>
+        <a href="Your_Profile.html">انشئ ملفك الشخصي</a>
         <a href="index.html">تسجيل الخروج </a>
         <a href="#contact">اتصل بي</a>
 
@@ -489,7 +486,119 @@
                 <a href="https://www.youtube.com/watch?v=X1ulCwyhCVM&list=PLDoPjvoNmBAzjsz06gkzlSrlev53MGIKe" class="btn-core" target="_blank">ابدأ الآن</a>
             </div>
         </section>
+                            <!--  جزء عدد الزوار  -->
 
+
+ <style>
+    .h-h {
+        color: #444;
+        margin-bottom: 20px;
+    }
+    #visitor-count {
+        font-size: 2rem;
+        color: #28a745;
+        animation: pop 1s ease-in-out;
+    }
+    .p-p {
+        margin: 10px 0;
+        color: #555;
+    }
+    @keyframes pop {
+        0% { transform: scale(0.5); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+    .btn btn-outline-danger {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    .btn btn-outline-danger:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<section class="section fade-in" dir="rtl">
+    <h2 id="greeting" class="h-h"></h2>
+    <h4 class="h-h">عدد زوار الموقع : <span id="visitor-count">0</span></h4>
+    <p id="today-visits" class="p-p"></p>
+    <p id="current-time" class="p-p"></p>
+    <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" disabled>إعادة تعيين الزيارات</button>
+</section>
+
+<script>
+    // جلب عدد الزوار من localStorage
+    let visitorCount = localStorage.getItem("visitorCount");
+
+    // إذا لم يكن العدد موجودًا، تعيين العدد الأولي إلى 1
+    if (!visitorCount) {
+        visitorCount = 1;
+    } else {
+        // إذا كان موجودًا، زيادة العدد بمقدار 1
+        visitorCount = parseInt(visitorCount) + 1;
+    }
+
+    // تخزين العدد الجديد في localStorage
+    localStorage.setItem("visitorCount", visitorCount);
+
+    // عرض العدد على الصفحة
+    document.getElementById("visitor-count").textContent = visitorCount;
+
+    // عرض رسالة ترحيب بناءً على الوقت
+    const hour = new Date().getHours();
+    let greeting;
+    if (hour < 12) {
+        greeting = "! صباح الخير";
+    } else if (hour < 18) {
+        greeting = "! مساء الخير";
+    } else {
+        greeting = "مساء الخير !";
+    }
+    document.getElementById("greeting").textContent = greeting;
+
+    // حساب عدد زيارات اليوم
+    const today = new Date().toLocaleDateString();
+    let todayVisits = JSON.parse(localStorage.getItem("todayVisits")) || {};
+
+    if (today !== todayVisits.date) {
+        todayVisits = { date: today, count: 1 };
+    } else {
+        todayVisits.count++;
+    }
+
+    localStorage.setItem("todayVisits", JSON.stringify(todayVisits));
+    document.getElementById("today-visits").textContent = `عدد زيارات اليوم: ${todayVisits.count}`;
+
+    // عرض الوقت الحالي
+    const currentTime = new Date().toLocaleString();
+    document.getElementById("current-time").textContent = `الوقت الحالي: ${currentTime}`;
+
+    // إضافة زر لإعادة تعيين العدادات
+    document.getElementById("reset-btn").addEventListener("click", function() {
+        // إعادة تعيين localStorage
+        localStorage.removeItem("visitorCount");
+        localStorage.removeItem("todayVisits");
+
+        // إعادة تحميل الصفحة لإعادة تعيين العدادات
+        location.reload();
+    });
+</script>
+
+
+
+
+<!--
+
+
+
+
+
+-->
 
           <!-- RATES -->
     <section id="rate" class="bg-dark text-white text-center py-5" style="margin-top:-20px;">
@@ -561,7 +670,7 @@
         }
     </style>
 
-<body>
+
     <div class="container mt-4">
         <h4 class="text-center" id="skil">Skills</h4>
 
@@ -801,5 +910,6 @@ Swal.fire({
         }
    </script>
 
-</body>
 </html>
+
+
