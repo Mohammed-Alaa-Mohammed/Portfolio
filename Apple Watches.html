@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Watches | Mohammed Alaa</title>
+    <link rel="icon" href="https://th.bing.com/th/id/R.56d03d4922aede73331ddeca6e76d73a?rik=azMVp%2fpwxJWPbA&pid=ImgRaw&r=0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- CSS for responsiveness -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://www.apple.com/newsroom/images/2023/09/apple-introduces-the-advanced-new-apple-watch-series-9/article/Apple-Watch-S9-hero-230912_Full-Bleed-Image.jpg.large.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container p {
+            color: white;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .container h2 {
+            color: rgb(23, 22, 22);
+            background-color: rgba(0, 255, 255, 0.8);
+            text-transform: uppercase;
+            font-size: 24px;
+            box-shadow: 1px 1px 10px 0 blue inset;
+            font-family: 'Anton', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .id .im {
+            max-width: 180px;
+            height: auto;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .id .im:hover {
+            transform: scale(1.05);
+        }
+
+        /* Add responsiveness for small screens */
+        @media (max-width: 768px) {
+            .container p {
+                font-size: 16px;
+            }
+
+            .container h2 {
+                font-size: 22px;
+            }
+
+            .id .im {
+                max-width: 150px;
+                margin: 10px auto;
+            }
+        }
+
+        @media (max-width: 150px) {
+            .container p {
+                font-size: 14px;
+            }
+
+            .container h2 {
+                font-size: 18px;
+            }
+
+            .id .im {
+                max-width: 150px;
+                margin: 5px auto;
+            }
+        }
+
+        .article-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px 0;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .article-section h3 {
+            color: gold;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .article-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+         /* Footer */
+        .footer {
+            opacity:.8;
+            background-color :#222f3e;
+            color: #d1d8e0;
+            padding: 1px 0;
+            text-align: center;
+            font-size :17px;
+            font-weight : bolder;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Welcome Message -->
+    <div class="container">
+        <p>Apple launches the latest smartwatch, the S9 Watch, which contains a highly efficient processor and a powerful battery. Discover all the amazing features of Apple's advanced smartwatches!</p>
+    </div>
+
+    <!-- Image Gallery -->
+    <center>
+    <div class="id">
+        <img class="im" src="https://help.apple.com/assets/6398A9D9257A2C1D9026967A/6398A9DD257A2C1D90269684/ar_EG/d8e59d50e4f17d3f9837df0ba06d080d.png" alt="APPLE & Watch" onclick="img();">
+        <img class="im" src="https://help.apple.com/assets/6398A9D9257A2C1D9026967A/6398A9DD257A2C1D90269684/ar_EG/d14570a82954c6440a02f9a5b61e2d06.png" alt="APPLE & Watch" onclick="img();">
+        <img class="im" src="https://help.apple.com/assets/6398A9D9257A2C1D9026967A/6398A9DD257A2C1D9026968B/ar_EG/84b397facb7a1e0cc6829481a2db570d.png" alt="APPLE & Watch" onclick="img();">
+        <img class="im" src="s1.png" alt="APPLE & Watch" onclick="img();">
+        <img class="im" src="s2.png" alt="APPLE & Watch" onclick="img();">
+    </div>
+        </center>
+
+    <!-- Articles Section -->
+    <div class="article-section">
+        <h3 dir="rtl">Arabic Article: ساعات آبل - أحدث الابتكارات</h3>
+        <p dir="rtl">تستمر شركة آبل في ريادتها لسوق الساعات الذكية مع إطلاق سلسلة ساعات آبل 9 الجديدة. تحتوي هذه الساعات على معالج عالي الكفاءة وبطارية قوية تدوم لفترات طويلة، مما يجعلها مثالية للاستخدام اليومي. تتمتع الساعات بتصميم عصري وقوي يمكنه تحمل ظروف الحياة اليومية القاسية.</p>
+    </div>
+
+    <div class="article-section">
+        <h3>English Article: Apple Watches - The Latest Innovations</h3>
+        <p>Apple continues to lead the smartwatch market with the launch of the new Apple Watch Series 9. These watches are equipped with a highly efficient processor and a powerful battery that lasts for extended periods, making them perfect for everyday use. The sleek and robust design ensures that the watch can handle the challenges of daily life.</p>
+    </div>
+
+    <!-- Additional Articles -->
+    <div class="article-section">
+        <h3 dir="rtl">Arabic Article: ساعات آبل وفعالياتها القادمة</h3>
+        <p>تعد ساعات آبل من أبرز الأجهزة القابلة للارتداء التي تقدمها شركة آبل، وتستعد الشركة لإطلاق العديد من الفعاليات الخاصة بالتقنية. تشمل الفعاليات القادمة عروضًا حية وورش عمل تفاعلية لعرض مميزات ساعات آبل الجديدة وأحدث التقنيات التي تم تضمينها في الإصدار الجديد. لا تفوت الفرصة لمتابعة آخر الأخبار!</p>
+    </div>
+
+    <div class="article-section">
+        <h3>English Article: Apple's Upcoming Events and New Features</h3>
+        <p>Apple is gearing up for some exciting events showcasing the new features of their Apple Watches. The upcoming live demonstrations and interactive workshops will provide an in-depth look at the new capabilities and features that are set to transform the smartwatch market. Stay tuned for the latest announcements!</p>
+    </div>
+
+    <div class="article-section">
+        <h3 dir="rtl">Arabic Article: آبل تواصل الابتكار في تقنيات الشاشات</h3>
+        <p>في كل إصدار جديد من ساعات آبل، تقدم الشركة تحسينات ملحوظة في تقنيات الشاشات. بدءًا من الشاشات ذات الدقة العالية إلى شاشات OLED المدمجة، تستمر آبل في تحسين تكنولوجيا الشاشات لتوفير تجربة مستخدم أفضل. تعرف على آخر الابتكارات في هذا المجال وكيف ستغير تجربة استخدام ساعة آبل.</p>
+    </div>
+
+    <div class="article-section">
+        <h3>English Article: Apple Continues Innovating in Screen Technology</h3>
+        <p>With every new release of the Apple Watch, Apple continues to improve screen technologies. From high-definition displays to integrated OLED screens, Apple is constantly pushing the boundaries of display technology to provide users with the best possible experience. Learn about the latest innovations in this area and how it will enhance your Apple Watch experience.</p>
+    </div>
+
+       <!-- Footer -->
+    <footer class="footer">
+        <br>
+        <p>  © 2024 جميع الحقوق محفوظة للمطور | محمد علاء محمد</p>
+    </footer>
+
+    <script>
+        function img() {
+            Swal.fire("APPLE - WATCH", "You cannot buy this watch at the moment", "error", {
+                button: ["OK"]
+            })
+        }
+
+        // Display initial pop-up
+        Swal.fire({
+            title: "HI USER WELCOME BACK",
+            text: "THIS IS A WEBSITE ABOUT APPLE WATCHES Developer Mohammed Alaa Mohammed",
+            imageUrl: "https://th.bing.com/th/id/R.56d03d4922aede73331ddeca6e76d73a?rik=azMVp%2fpwxJWPbA&pid=ImgRaw&r=0",
+            imageWidth: 200,
+            imageHeight: 180,
+            imageAlt: "Apple Watch"
+        })
+    </script>
+
+</body>
+
+</html>

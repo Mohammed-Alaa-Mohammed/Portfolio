@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='https://th.bing.com/th/id/R.3f96eae081bbe18e4f950fd97c17f573?rik=YuSWoNnCm7OmXA&pid=ImgRaw&r=0'>
+    <link rel="stylesheet" href="Delta University.css">
+    <title>Delta University</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+        * {
+            font-family: 'Ubuntu', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-image: linear-gradient(to right, #02033d, #0000004c);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background-image: linear-gradient(to right, #01022de5 30%, #00000088),
+                url(https://new.deltauniv.edu.eg/Uploads/629b32ac-dd5d-4fc2-8a21-02a41a160f7f_59.jpeg);
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            max-width: 1200px;
+            height: 680px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        ul a {
+            border-bottom: 2px solid transparent;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        ul a:hover {
+            border-bottom-color: white;
+            color: #02033d;
+            border-radius: 3px;
+        }
+
+        .contect {
+            color: black;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contect h2 {
+            font-size: 36px;
+            text-transform: uppercase;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: dodgerblue;
+            margin-bottom: 20px;
+        }
+
+        .contect p {
+            letter-spacing: 1px;
+            line-height: 1.6;
+            padding: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            color: rgb(19, 19, 19);
+            border-radius: 10px;
+        }
+
+        .contect p:hover {
+            color: white;
+            background-color: #0000005f;
+        }
+
+        .contect button {
+            font-size: 16px;
+            padding: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .contect button:hover {
+            background-color: transparent;
+            border-color: white;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 10px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .contect {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .contect h2 {
+                font-size: 28px;
+            }
+
+            .contect p {
+                font-size: 14px;
+            }
+
+            .contect button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contect h2 {
+                font-size: 24px;
+            }
+
+            .contect p {
+                font-size: 12px;
+            }
+
+            .contect button {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+        <a href="#" class="logo">Delta University | Mohammed Alaa</a>
+        <ul>
+            <li><a href="Delta University.html">Home</a></li>
+            <li><a href="https://wa.me/966538886324" target="_blank">Connect Us</a></li>
+            <li><a href="https://new.deltauniv.edu.eg/AR/news/index" target="_blank">News about the university</a></li>
+            <li><a href="https://new.deltauniv.edu.eg/AR/aboutdu/index" target="_blank">University About</a></li>
+        </ul>
+    </header>
+    <div class="contect">
+        <h2>Delta University</h2>
+        <p>Delta University of Science and Technology in Mansoura is one of the Delta Group entities, which works in the field of private education in Egypt. It was established by Resolution No. 147 of 2007 as the first private university in the Egyptian Delta and Lower Egypt governorates. The university is located on the international coastal road in the city of Gamasa on the Mediterranean coast in Dakahlia Governorate.
+
+            University Vision: The university aspires to become a leading university in education, research, and community service at the local and regional levels. This can be achieved by preparing graduates to become the nucleus of future leaders by developing their behavioral and scientific skills to contribute to the development of Egyptian society and search for solutions to the surrounding community problems.
+
+            University Mission: The university is committed to preparing its graduates through advanced educational programs and building a distinguished research base that meets the needs and requirements of society and helps in developing the environment.</p>
+        <br><br>
+            <a href="https://new.deltauniv.edu.eg/ar/home/index" target="_blank">
+            <button>Website Of Delta University</button></a>
+    </div>
+  </div>
+</body>
+</html>

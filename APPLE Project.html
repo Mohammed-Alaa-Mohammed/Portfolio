@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/0/747.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Phones | Mohammed Alaa</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/11515/11515803.png" alt="APPLE" class="logo"></a>
+            <ul>
+                <li>
+                    <a href="APPLE Project.html">Home</a>
+                    <a href="https://www.bing.com/news/search?q=apple&qpvt=apple+news&FORM=EWRE" target="_blank">New</a>
+                    <a href="https://wa.me/966538886324" target="_blank">Support</a>
+                    <a href="https://www.apple.com" target="_blank">Apple Website</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="text">
+                <h3>IPHONE 15 PRO & PRO MAX </h3>
+                <p>The iPhone "Pro" is equipped with the same port, in addition to being "the first iPhone made of titanium used in the field of aviation and space." The phone runs on the A17 PRO processor chip used in the previous “Pro” version. Both Pro and Pro Max will be released in four new colors, including titanium black, titanium white, titanium blue, and natural titanium.The price of the iPhone 15 starts at $799, the “Plus” from $899, the “Pro” from $999, and the “Pro Max” from $1,199.</p>
+                    <a href="https://www.apple.com" target="_blank">WEBSITE OF APPLE</a>
+
+            </div>
+            <div class="image">
+                <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/closer-look/blue_titanium__wsqgpa9i1822_large.jpg" alt="img">
+
+                <img  src="https://www.apple.com/v/iphone-15-pro/a/images/overview/closer-look/natural_titanium__ccl12n7vwwxe_large.jpg" alt="">
+
+                <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/closer-look/white_titanium__b3fwwp6zrrhy_large.jpg" alt="img">
+
+                <img src='https://www.apple.com/v/iphone-15-pro/a/images/overview/closer-look/black_titanium__e5htsz029002_large.jpg' alt="img">
+                <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/contrast/iphone_15__dthdw40fq0wi_large.jpg" alt="img">
+                <img src='https://www.apple.com/v/iphone-15-pro/a/images/overview/closer-look/all_colors__eppfcocn9mky_large.jpg' alt="img">
+
+            </div>
+        </div>
+    </div>
+  <!-- Footer -->
+    <footer class="footer">
+        <p>  © 2024 جميع الحقوق محفوظة للمطور | محمد علاء محمد</p>
+    </footer>
+</body>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    background-image: url(https://i.pinimg.com/originals/01/e8/f3/01e8f35d228c0468921ef0365064a24b.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 10px 0;
+}
+.logo{
+    width: 55px;
+    padding:-20px
+}
+ul {
+    display: flex;
+    list-style: none;
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+ul li a:hover{
+    color: rgb(149, 104, 255);
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 5px 0;
+}
+.content .text{
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+
+
+}
+.content .text h3{
+    font-size: 32px;
+}
+.content .text p{
+    font-size: 16px;
+    margin: 15px 0;
+}
+.content .text a{
+    text-decoration: none;
+    background-color: white;
+    color: red;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: cursive;
+    margin-bottom: 25px;
+}
+.content .text a:hover{
+    background-color: rgb(52, 13, 227);
+    color: white;
+}
+.content .image{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.content .image img{
+    width: 100px;
+    height: auto;
+    padding:20px;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+.content .image img:hover{
+    transform: scale(1.1);
+}
+.footer {
+    background-color: #000;
+    color: #ccc;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content .text, .content .image {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    ul li a {
+        margin: 5px 0;
+    }
+    .content .text h3 {
+        font-size: 24px;
+    }
+    .content .text p {
+        font-size: 14px;
+    }
+    .content .image img {
+        width: 80px;
+    }
+}
+@media (max-width: 480px) {
+    .logo {
+        width: 40px;
+    }
+    .content .text h3 {
+        font-size: 20px;
+    }
+    .content .text p {
+        font-size: 12px;
+    }
+    .content .image img {
+        width: 60px;
+    }
+}
+</style>
+</html>

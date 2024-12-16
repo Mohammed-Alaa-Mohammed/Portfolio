@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/2407/PNG/96/login_gov_icon_146024.png">
+    <title>كورسات اونلاين | تسجيل الدخول</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* ===== Global Styles ===== */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://th.bing.com/th/id/R.37281b5df9a00ec7105983c421a3b642?rik=LGtYRHXtGX4yPg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2f0V1IOCI.jpg&ehk=LAnaNDhle8g4jqmWzCLkTBomHeRjkHRpn3T8dUOgDkU%3d&risl=&pid=ImgRaw&r=0') no-repeat center center/cover;
+            color: #fff;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            width: 100px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        #login-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #f9f9f9;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .input-group input:focus {
+            border: 1px solid #2575fc;
+            outline: none;
+            background: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-left:30px;
+            width:200px;
+        }
+
+        button:hover {
+            background: #1a5eb8;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+
+        footer a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ===== Media Queries ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            #app {
+                width: 100%;
+                max-width: 100%;
+                padding: 20px;
+                box-shadow: none;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 80px;
+            }
+
+            header h1 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Header with logo -->
+        <header>
+            <img src="https://cdn4.iconfinder.com/data/icons/digital-marketing-people/299/Design_Color_Set-03-34-256.png" alt="Login Icon">
+            <h1>Welcome Back</h1>
+        </header>
+
+        <!-- Login Form Section -->
+        <main id="login-section">
+            <h2>Please Login to Your Account</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Don't have an account? <a href="#" onclick="fun();">Sign up here</a></p>
+        </footer>
+    </div>
+
+    <script>
+function fun() {
+    // تعريف مزيج toast
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: {
+        popup: 'custom-toast' // إضافة كلاس مخصص
+    },
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+    });
+
+    // استدعاء Toast باستخدام عنصر أو بيانات
+    Toast.fire({
+        icon: 'error',
+        title: 'حدث خطأ قم بتسجيل الدخول '
+    });
+}
+
+
+        // ========== Login Page Logic ==========
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (username === 'admin' && password === '123456') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful!',
+                    text: `Welcome, ${username}!`,
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(() => {
+                    window.location.href = "https://mohammed-alaa-mohammed.github.io/Portfolio/";
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed!',
+                    text: 'Invalid username or password. Please try again.',
+                    confirmButtonText: 'Retry'
+                });
+            }
+        });
+
+    </script>
+<style>
+@media (max-width: 768px) {
+    .custom-toast {
+        font-size: 16px; /* تصغير النص قليلاً */
+        padding: 15px; /* تقليل المسافات الداخلية */
+        width: 300px; /* ضبط العرض للشاشات الصغيرة */
+    }
+}
+
+</style>
+
+</body>
+</html>

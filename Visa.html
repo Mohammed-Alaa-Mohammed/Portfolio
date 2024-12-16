@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa | Mohammed Alaa</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/363_Visa_Credit_Card_logo-64.png">
+</head>
+<body>
+    <header>
+        <h1>محاكاة كارت الفيزا</h1>
+        <h6 style="color:#fcc111;font-size:11px;font-weight:bold;">By Developer : Mohammed Alaa Mohammed</h6>
+    </header>
+    <main>
+        <section id="card">
+            <div class="card">
+                <div class="card-number">1234 5678 9012 3456</div>
+                <div class="card-holder">اسم حامل البطاقة</div>
+                <div class="card-expiry">12/24</div>
+                <div class="card-cvv">123</div>
+            </div>
+        </section>
+        <section id="form">
+            <form id="card-form">
+                <label for="number">رقم البطاقة:</label>
+                <input type="number" id="number" name="number" maxlength="16" required>
+                <label for="holder">اسم حامل البطاقة:</label>
+                <input type="text" id="holder" name="holder" required>
+                <label for="expiry">تاريخ الانتهاء:</label>
+                <input type="number" id="expiry" name="expiry" placeholder="MM/YY" required>
+                <label for="cvv">CVV:</label>
+                <input type="number" id="cvv" name="cvv" maxlength="3" required>
+                <button type="button" onclick="updateCard()">تحديث معلومات البطاقة</button>
+            </form>
+        </section>
+    </main>
+    <script src="Dynamic.js"></script>
+</body>
+</html>
+
+<style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.card {
+    background-color: #007BFF;
+    color: white;
+    width: 300px;
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 2em;
+}
+
+.card-number, .card-holder, .card-expiry, .card-cvv {
+    margin: 0.5em 0;
+}
+
+form {
+    background-color: white;
+    padding: 1em;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.5em 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    color: floralwhite;
+    background-color: #212225;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card {
+        width: 250px;
+        padding: 0.8em;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 0.9em;
+        padding: 0.8em;
+    }
+
+    .card {
+        width: 200px;
+        padding: 0.5em;
+    }
+
+    form {
+        width: 95%;
+    }
+
+    input, button {
+        font-size: 0.9em;
+    }
+}
+</style>
+
+<script>
+// script.js
+function updateCard() {
+    const number = document.getElementById('number').value;
+    const holder = document.getElementById('holder').value;
+    const expiry = document.getElementById('expiry').value;
+    const cvv = document.getElementById('cvv').value;
+
+    document.querySelector('.card-number').textContent = number;
+    document.querySelector('.card-holder').textContent = holder;
+    document.querySelector('.card-expiry').textContent = expiry;
+    document.querySelector('.card-cvv').textContent = cvv;
+}
+</script>
