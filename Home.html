@@ -348,7 +348,7 @@
         border: none;
         display: block;
         width: 50%; /* يجعل الزر يأخذ 80% من عرض الحاوية */
-        margin: 15px auto 0px 320px; /* مركز الزر في الصفحة */
+        margin: 15px -770px 0px 320px; /* مركز الزر في الصفحة */
         text-align: center; /* محاذاة النص في الوسط */
         transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل مع التأثيرات */
     }
@@ -366,7 +366,7 @@
             font-size: 1rem; /* تصغير حجم الخط في الشاشات الصغيرة */
             padding: 12px  22px; /* تعديل حجم الحشو */
             max-width: 320px; /* تصغير العرض الأقصى */
-            margin:15px 0 0px 0;
+            margin:15px auto 0px 0;
         }
     }
 
@@ -376,7 +376,7 @@
             font-size: 0.9rem; /* تصغير الخط في الشاشات الصغيرة جدًا */
             padding: 10px 20px; /* تعديل الحشو */
             max-width: 280px; /* تصغير العرض الأقصى */
-            margin:15px 0px 0;
+            margin:15px auto 0px 0;
         }
     }
 </style>
@@ -467,25 +467,66 @@
 
 </style>
       <!-- Coruses Section -->
-    <section id="core" class="section fade-in" dir="auto" style="height:auto; background-color:#ffffff;">
-       <b><h2 dir="ltr" style="display: block;font-weight: bold;">قسم الكورسات</h2></b>
-            <div class="course-core">
+<section id="core" class="section fade-in" dir="auto" style="height:auto; background-color:#ffffff;">
+    <b><h2 dir="ltr" style="display: block;font-weight: bold;">قسم الكورسات</h2></b>
+    <div class="course-core">
+        <h3>دورة HTML الأساسية</h3>
+        <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
+        <b>م / أســـامــة الـــزيـــرو</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
+        <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank">ابدأ الآن</a>
+    </div>
 
-                <h3>دورة HTML الأساسية</h3>
-                <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
-                <b>م / أســـامــة الـــزيـــرو</b>
-                 <p style="font-weight: bold;
-                                            color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
-                <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank" style="font-weight: bold";>ابدأ الآن</a>
-            </div>
-            <div class="course-core">
-                <h3>دورة CSS المتقدمة</h3>
-                <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
-                <b dir="auto">Eng / Mohammed Alaa </b>
-                <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">70$</p>
-                <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold";>إشترك الآن</a>
-            </div>
-        </section>
+    <div class="course-core">
+        <h3>دورة CSS المتقدمة</h3>
+        <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
+        <b dir="auto">م / محمد علاء محمد</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">70$</p>
+        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+    </div>
+
+    <!-- إضافة كورسات جديدة في البرمجة -->
+    <div class="course-core">
+        <h3>دورة JavaScript للمبتدئين</h3>
+        <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
+         <b>م / أســـامــة الـــزيـــرو</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
+        <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
+    </div>
+
+    <div class="course-core">
+        <h3>دورة Python للمبتدئين</h3>
+        <p>تعلم البرمجة باستخدام Python من البداية.</p>
+        <b>قناه / freecodecamp</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">مجاني</p>
+        <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLzMcBGfZo4-kAqvR7chET9uD7lx3s8Xto" class="btn-core" target="_blank">ابدأ الآن</a>
+    </div>
+
+    <div class="course-core">
+        <h3>دورة React JS للمطورين</h3>
+        <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
+        <b>م / يوسف محمود</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">100$</p>
+        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+    </div>
+
+    <div class="course-core">
+        <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
+        <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
+        <b>م / فاطمة صلاح</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">80$</p>
+        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+    </div>
+
+    <div class="course-core">
+        <h3>دورة تطوير الألعاب باستخدام Unity</h3>
+        <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
+        <b>م / خالد إبراهيم</b>
+        <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-top:5px; margin-right:10px;">120$</p>
+        <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+    </div>
+</section>
+
                             <!--  جزء عدد الزوار  -->
 
 
@@ -528,26 +569,63 @@
     <h4 class="h-h">عدد زوار الموقع : <span id="visitor-count">0</span></h4>
     <p id="today-visits" class="p-p"></p>
     <p id="current-time" class="p-p"></p>
-    <button disabled id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" >إعادة تعيين الزيارات</button>
+    <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" disabled>إعادة تعيين الزيارات</button>
 </section>
 
 <script>
-    // جلب عدد الزوار من localStorage
-    let visitorCount = localStorage.getItem("visitorCount");
-
-    // إذا لم يكن العدد موجودًا، تعيين العدد الأولي إلى 1
-    if (!visitorCount) {
-        visitorCount = 1;
-    } else {
-        // إذا كان موجودًا، زيادة العدد بمقدار 1
-        visitorCount = parseInt(visitorCount) + 1;
+    // دالة لاكتشاف نوع الجهاز
+    function getDeviceType() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.includes("mobile")) {
+            return "Mobile";
+        } else if (userAgent.includes("tablet")) {
+            return "Tablet";
+        } else {
+            return "Desktop";
+        }
     }
 
-    // تخزين العدد الجديد في localStorage
-    localStorage.setItem("visitorCount", visitorCount);
+    // دالة لتوليد معرف فريد
+    function generateUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
 
-    // عرض العدد على الصفحة
-    document.getElementById("visitor-count").textContent = visitorCount;
+    // جلب نوع الجهاز
+    const deviceType = getDeviceType();
+
+    // جلب معرف الجهاز من localStorage إذا كان موجودًا
+    let deviceId = localStorage.getItem("deviceId");
+
+    // إذا لم يكن المعرف موجودًا، قم بتوليد معرف جديد وتخزينه
+    if (!deviceId) {
+        deviceId = generateUUID();
+        localStorage.setItem("deviceId", deviceId);
+    }
+
+    // جلب عدد الزيارات من localStorage حسب الجهاز
+    let deviceVisits = JSON.parse(localStorage.getItem("deviceVisits")) || {};
+
+    // إذا لم يكن هناك سجل للجهاز، تعيينه
+    if (!deviceVisits[deviceType]) {
+        deviceVisits[deviceType] = { count: 1, visitedDevices: [] };
+    }
+
+    // تحقق إذا كان هذا الجهاز قد زار الموقع بالفعل
+    if (!deviceVisits[deviceType].visitedDevices.includes(deviceId)) {
+        // إضافة الجهاز إلى سجل الزيارات
+        deviceVisits[deviceType].visitedDevices.push(deviceId);
+        deviceVisits[deviceType].count++;
+
+        // تخزين الزيارات الجديدة في localStorage
+        localStorage.setItem("deviceVisits", JSON.stringify(deviceVisits));
+    }
+
+    // عرض عدد الزيارات حسب الجهاز
+    document.getElementById("visitor-count").textContent = deviceVisits[deviceType].count;
 
     // عرض رسالة ترحيب بناءً على الوقت
     const hour = new Date().getHours();
@@ -581,13 +659,15 @@
     // إضافة زر لإعادة تعيين العدادات
     document.getElementById("reset-btn").addEventListener("click", function() {
         // إعادة تعيين localStorage
-        localStorage.removeItem("visitorCount");
+        localStorage.removeItem("deviceVisits");
         localStorage.removeItem("todayVisits");
+        localStorage.removeItem("deviceId");
 
         // إعادة تحميل الصفحة لإعادة تعيين العدادات
         location.reload();
     });
 </script>
+
 
 
 
@@ -754,25 +834,48 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="section fade-in">
+   <section id="contact" class="section fade-in">
+    <h2 dir="rtl">اتصل بي</h2>
+    <form dir="rtl" id="contact-form" onsubmit="sendWhatsAppMessage(event)">
+        <div class="mb-3">
+            <label dir="rtl" for="name" class="form-label">الإســـم كـــامــلاً :</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label dir="rtl" for="email" class="form-label">الـــبــريـــد الإلـــكــتــروني :</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">رســـــالـــتـــك :</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">إرسال</button>
+    </form>
+</section>
 
-        <h2 dir="rtl">اتصل بي</h2>
-        <form dir="rtl" id="contact-form">
-            <div class="mb-3">
-                <label dir="rtl" for="name" class="form-label">الإســـم كـــامــلاً :</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label dir="rtl" for="email" class="form-label"> الـــبــريـــد الإلـــكــتــروني :</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">رســـــالـــتـــك :</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">إرسال</button>
-        </form>
-    </section>
+<script>
+    function sendWhatsAppMessage(event) {
+        event.preventDefault(); // منع إرسال النموذج بالطريقة التقليدية
+
+        // الحصول على البيانات من النموذج
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // الرقم الذي سيتم إرسال الرسالة إليه (استبدل بالرقم الذي تريده)
+        const phoneNumber = "+966538886324"; // الرقم الذي سيتم إرسال الرسالة إليه عبر واتساب
+
+        // نص الرسالة الذي سيتم إرساله
+        const textMessage = `اسم المستخدم: ${name}\nالبريد الإلكتروني: ${email}\nالرسالة: ${message}`;
+
+        // رابط واتساب مع النص
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textMessage)}`;
+
+        // فتح رابط واتساب لبدء المحادثة
+        window.open(whatsappLink, '_blank');
+    }
+</script>
+
 
     <!-- Footer -->
 
@@ -852,7 +955,7 @@ Toast.fire({
             border-radius: 50px;
             padding: 15px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 25px;
             display: none; /* إخفاء الزر في البداية */
         }
 
@@ -864,7 +967,7 @@ Toast.fire({
 
 
     <!-- زر التمرير للأعلى -->
-    <button id="scrollTopBtn" onclick="scrollToTop()">⇑</button>
+    <button id="scrollTopBtn" onclick="scrollToTop()">⭡</button>
 
     <!-- تضمين JavaScript داخل الوسم <script> -->
     <script>
