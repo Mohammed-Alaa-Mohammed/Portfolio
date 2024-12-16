@@ -232,6 +232,7 @@
 
 
         <a href="#about">عن الموقع</a>
+        <a href="#count">عدد زوار الموقع</a>
         <a href="#services">خدماتي</a>
         <a href="#projects">المشاريع</a>
         <a href="#skil">المهارات</a>
@@ -643,7 +644,7 @@
     }
 </style>
 
-<section class="section fade-in" dir="rtl">
+<section class="section fade-in" dir="rtl" id="count">
     <h2 id="greeting" class="h-h"></h2>
     <h4 class="h-h" dir="rtl">عدد زوار الموقع : <span id="visitor-count" dir="rtl">0</span></h4>
     <p id="today-visits" class="p-p" dir="rtl"></p>
@@ -702,6 +703,7 @@
 
     // جلب سجل جميع الزيارات
     let visitsData = JSON.parse(localStorage.getItem("visitsData")) || {};
+    let totalVisits = localStorage.getItem("totalVisits") || 0;
 
     // التحقق من سجل الجهاز الحالي
     if (!visitsData[deviceId]) {
@@ -711,6 +713,7 @@
             visitCount: 1,
             lastVisit: new Date().toISOString()
         };
+        totalVisits++; // زيادة العدد الإجمالي للزوار
     } else {
         // حساب الوقت منذ آخر زيارة
         const lastVisit = visitsData[deviceId].lastVisit;
@@ -718,15 +721,16 @@
 
         if (hoursSinceLastVisit >= 24) {
             visitsData[deviceId].visitCount++;
+            totalVisits++; // زيادة العدد الإجمالي للزوار
         }
         visitsData[deviceId].lastVisit = new Date().toISOString();
     }
 
     // حفظ البيانات المُحدثة
     localStorage.setItem("visitsData", JSON.stringify(visitsData));
+    localStorage.setItem("totalVisits", totalVisits);
 
-    // حساب العدد الإجمالي للزيارات
-    const totalVisits = Object.values(visitsData).reduce((sum, device) => sum + device.visitCount, 0);
+    // عرض عدد الزوار الإجمالي
     document.getElementById("visitor-count").textContent = totalVisits;
 
     // عرض تحية الوقت
@@ -746,9 +750,11 @@
     document.getElementById("reset-btn").addEventListener("click", function() {
         localStorage.removeItem("visitsData");
         localStorage.removeItem("deviceId");
+        localStorage.removeItem("totalVisits");
         location.reload();
     });
 </script>
+
 
 
 
