@@ -649,6 +649,7 @@
     <p id="today-visits" class="p-p" dir="rtl"></p>
     <p id="current-time" class="p-p" dir="rtl"></p>
     <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" dir="rtl">إعادة تعيين الزيارات</button>
+    <div id="user-info" class="user-info"></div>
 </section>
 
 <script>
@@ -702,7 +703,6 @@
 
     // جلب سجل جميع الزيارات
     let visitsData = JSON.parse(localStorage.getItem("visitsData")) || {};
-    let totalVisits = parseInt(localStorage.getItem("totalVisits")) || 0;
 
     // التحقق من سجل الجهاز الحالي
     if (!visitsData[deviceId]) {
@@ -710,27 +710,35 @@
             deviceType: deviceType,
             operatingSystem: operatingSystem,
             visitCount: 1,
-            lastVisit: new Date().toISOString()
+            lastVisit: new Date().toISOString(),
+            visitDetails: [{
+                visitTime: new Date().toISOString(),
+                deviceType: deviceType,
+                operatingSystem: operatingSystem
+            }]
         };
     } else {
         // حساب الوقت منذ آخر زيارة
         const lastVisit = visitsData[deviceId].lastVisit;
         const hoursSinceLastVisit = getHourDifference(lastVisit, new Date().toISOString());
 
+        // إذا مر أكثر من 24 ساعة منذ آخر زيارة، زيادة العد
         if (hoursSinceLastVisit >= 24) {
             visitsData[deviceId].visitCount++;
+            visitsData[deviceId].visitDetails.push({
+                visitTime: new Date().toISOString(),
+                deviceType: deviceType,
+                operatingSystem: operatingSystem
+            });
         }
         visitsData[deviceId].lastVisit = new Date().toISOString();
     }
 
-    // زيادة العدد الإجمالي للزوار عند كل زيارة
-    totalVisits++;
-
     // حفظ البيانات المُحدثة
     localStorage.setItem("visitsData", JSON.stringify(visitsData));
-    localStorage.setItem("totalVisits", totalVisits);
 
-    // عرض عدد الزوار الإجمالي
+    // حساب العدد الإجمالي للزيارات
+    const totalVisits = Object.values(visitsData).reduce((sum, device) => sum + device.visitCount, 0);
     document.getElementById("visitor-count").textContent = totalVisits;
 
     // عرض تحية الوقت
@@ -746,11 +754,24 @@
     setInterval(updateTime, 1000);
     updateTime();
 
+    // عرض تفاصيل الزيارة
+    const userInfoDiv = document.getElementById("user-info");
+    const visitDetails = visitsData[deviceId].visitDetails;
+    const lastVisitTime = visitDetails[visitDetails.length - 1].visitTime;
+    const lastVisitDeviceType = visitDetails[visitDetails.length - 1].deviceType;
+    const lastVisitOS = visitDetails[visitDetails.length - 1].operatingSystem;
+
+    userInfoDiv.innerHTML = `
+        <h4>آخر زيارة:</h4>
+        <p>التاريخ: ${lastVisitTime}</p>
+        <p>الجهاز: ${lastVisitDeviceType}</p>
+        <p>النظام: ${lastVisitOS}</p>
+    `;
+
     // إعادة تعيين البيانات
     document.getElementById("reset-btn").addEventListener("click", function() {
         localStorage.removeItem("visitsData");
         localStorage.removeItem("deviceId");
-        localStorage.removeItem("totalVisits");
         location.reload();
     });
 </script>
