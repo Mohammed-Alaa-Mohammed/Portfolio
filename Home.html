@@ -235,11 +235,11 @@
         <a href="#services">خدماتي</a>
         <a href="#projects">المشاريع</a>
         <a href="#skil">المهارات</a>
-        <a href="Home.html">تنشيط الموقع</a>
+<!--        <a href="Home.html">تنشيط الموقع</a>-->
         <a href="#core">قسم الكورسات</a>
          <a href="#core" onclick="c();">ورشه العمل اونلاين</a>
         <a href="#notes">إرشادات </a>
-        <a href="Your_Profile.html">انشئ ملفك الشخصي</a>
+        <a href="Your_Profile.html">الملف الشخصي</a>
         <a href="index.html">تسجيل الخروج </a>
         <a href="#contact">اتصل بي</a>
 
@@ -646,7 +646,7 @@
 <section class="section fade-in" dir="rtl">
     <h2 id="greeting" class="h-h"></h2>
     <h4 class="h-h" dir="rtl">عدد زوار الموقع : <span id="visitor-count" dir="rtl">0</span></h4>
-    <p id="today-visits" class="p-p" DIR="rtl"></p>
+    <p id="today-visits" class="p-p" dir="rtl"></p>
     <p id="current-time" class="p-p" dir="rtl"></p>
     <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" dir="rtl">إعادة تعيين الزيارات</button>
 </section>
@@ -664,7 +664,23 @@
         }
     }
 
-    // دالة لتوليد معرف فريد
+    // دالة لاكتشاف النظام (OS)
+    function getOS() {
+        const platform = navigator.platform.toLowerCase();
+        if (platform.includes("win")) return "Windows";
+        if (platform.includes("mac")) return "MacOS";
+        if (platform.includes("linux")) return "Linux";
+        if (platform.includes("android")) return "Android";
+        if (platform.includes("iphone") || platform.includes("ipad")) return "iOS";
+        return "Other";
+    }
+
+    // دالة لحساب الفرق بالساعات بين تاريخين
+    function getHourDifference(date1, date2) {
+        return Math.abs(new Date(date1) - new Date(date2)) / 36e5; // تحويل الفرق إلى ساعات
+    }
+
+    // دالة لتوليد معرف فريد لكل جهاز
     function generateUUID() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0,
@@ -673,84 +689,67 @@
         });
     }
 
-    // جلب نوع الجهاز
+    // جلب البيانات
     const deviceType = getDeviceType();
-
-    // جلب معرف الجهاز من localStorage إذا كان موجودًا
+    const operatingSystem = getOS();
     let deviceId = localStorage.getItem("deviceId");
 
-    // إذا لم يكن المعرف موجودًا، قم بتوليد معرف جديد وتخزينه
+    // إنشاء معرف جديد إذا لم يكن موجودًا
     if (!deviceId) {
         deviceId = generateUUID();
         localStorage.setItem("deviceId", deviceId);
     }
 
-    // جلب عدد الزيارات من localStorage حسب الجهاز
-    let deviceVisits = JSON.parse(localStorage.getItem("deviceVisits")) || {};
+    // جلب سجل جميع الزيارات
+    let visitsData = JSON.parse(localStorage.getItem("visitsData")) || {};
 
-    // إذا لم يكن هناك سجل للجهاز، تعيينه
-    if (!deviceVisits[deviceType]) {
-        deviceVisits[deviceType] = { count: 1, visitedDevices: [] };
-    }
-
-    // تحقق إذا كان هذا الجهاز قد زار الموقع بالفعل
-    if (!deviceVisits[deviceType].visitedDevices.includes(deviceId)) {
-        // إضافة الجهاز إلى سجل الزيارات
-        deviceVisits[deviceType].visitedDevices.push(deviceId);
-        deviceVisits[deviceType].count++;
-
-        // تخزين الزيارات الجديدة في localStorage
-        localStorage.setItem("deviceVisits", JSON.stringify(deviceVisits));
-    }
-
-    // عرض عدد الزيارات حسب الجهاز
-    document.getElementById("visitor-count").textContent = deviceVisits[deviceType].count;
-
-    // عرض رسالة ترحيب بناءً على الوقت
-    const hour = new Date().getHours();
-    let greeting;
-    if (hour < 12) {
-        greeting = "صباح الخير !";
-    } else if (hour < 18) {
-        greeting = "! مساء الخير";
+    // التحقق من سجل الجهاز الحالي
+    if (!visitsData[deviceId]) {
+        visitsData[deviceId] = {
+            deviceType: deviceType,
+            operatingSystem: operatingSystem,
+            visitCount: 1,
+            lastVisit: new Date().toISOString()
+        };
     } else {
-        greeting = "مساء الخير !";
+        // حساب الوقت منذ آخر زيارة
+        const lastVisit = visitsData[deviceId].lastVisit;
+        const hoursSinceLastVisit = getHourDifference(lastVisit, new Date().toISOString());
+
+        if (hoursSinceLastVisit >= 24) {
+            visitsData[deviceId].visitCount++;
+        }
+        visitsData[deviceId].lastVisit = new Date().toISOString();
     }
+
+    // حفظ البيانات المُحدثة
+    localStorage.setItem("visitsData", JSON.stringify(visitsData));
+
+    // حساب العدد الإجمالي للزيارات
+    const totalVisits = Object.values(visitsData).reduce((sum, device) => sum + device.visitCount, 0);
+    document.getElementById("visitor-count").textContent = totalVisits;
+
+    // عرض تحية الوقت
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? "صباح الخير!" : hour < 18 ? "مساء الخير!" : "مساء الخير!";
     document.getElementById("greeting").textContent = greeting;
 
-    // حساب عدد زيارات اليوم
-    const today = new Date().toLocaleDateString();
-    let todayVisits = JSON.parse(localStorage.getItem("todayVisits")) || {};
-
-    if (today !== todayVisits.date) {
-        todayVisits = { date: today, count: 1 };
-    } else {
-        todayVisits.count++;
-    }
-
-    localStorage.setItem("todayVisits", JSON.stringify(todayVisits));
-    document.getElementById("today-visits").textContent = `عدد زيارات اليوم: ${todayVisits.count}`;
-
-    // دالة لعرض الوقت الحالي بشكل مستمر
+    // عرض الوقت الحالي
     function updateTime() {
         const currentTime = new Date().toLocaleString();
         document.getElementById("current-time").textContent = `الوقت الحالي: ${currentTime}`;
     }
-
-    // تحديث الوقت كل ثانية
     setInterval(updateTime, 1000);
+    updateTime();
 
-    // إضافة زر لإعادة تعيين العدادات
+    // إعادة تعيين البيانات
     document.getElementById("reset-btn").addEventListener("click", function() {
-        // إعادة تعيين localStorage
-        localStorage.removeItem("deviceVisits");
-        localStorage.removeItem("todayVisits");
+        localStorage.removeItem("visitsData");
         localStorage.removeItem("deviceId");
-
-        // إعادة تحميل الصفحة لإعادة تعيين العدادات
         location.reload();
     });
 </script>
+
 
 
 
