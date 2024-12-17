@@ -535,7 +535,41 @@
             <!-- زر لاستدعاء الدالة -->
 <a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
 
+<!-- إشعار مع صورة -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" id="imageToastContainer"></div>
+
 <script>
+// إشعار مع صورة
+  document.getElementById('imageToastTrigger').addEventListener('click', function () {
+    const toastContainer = document.getElementById('imageToastContainer');
+    const newToast = document.createElement('div');
+    newToast.classList.add('toast', 'text-bg-danger', 'border-0');
+    newToast.setAttribute('role', 'alert');
+    newToast.innerHTML = `
+      <div class="toast-header">
+        <img src="https://via.placeholder.com/20" class="rounded me-2" alt="...">
+        <strong class="me-auto">إشعار مع صورة</strong>
+        <small>قبل قليل</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body">
+        هذا إشعار يحتوي على صورة.
+      </div>
+    `;
+    toastContainer.appendChild(newToast);
+    new bootstrap.Toast(newToast).show();
+  });
+
+
+
+
+
+
+
+
+
+
+
   // تعريف الدالة showToast
   function showToast() {
     const Toast = Swal.mixin({
