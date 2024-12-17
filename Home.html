@@ -77,7 +77,7 @@
             border-bottom: 2px solid #0066cc;
         }
         .hero-section h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #0066cc;
             margin-bottom: 20px;
         }
@@ -256,12 +256,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section fade-in">
-        <h1 dir="rtl">مرحبًا بك في Code Courses !</h1>
-        <p dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة
-<br>
-<b>
-وايضاً كورسات تدريبية في مجال البرمجة
-.</p>
+        <h1 dir="rtl">مرحبًا بك في موقعنا !</h1>
+        <p dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة.</p>
         <button onclick="alert('انت الآن في الصفحة الرئيسية يمكنك تصفح جميع المشاريع الخاصــة بالمطور ')" class="btn btn-outline-primary" style=
                 "width:150px;
                 height:45px;
@@ -524,6 +520,7 @@
                     <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #006266;">الحالة : متوفر</p>
                     <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة: 08‏/01‏/2021</p>
 
@@ -535,41 +532,102 @@
             <!-- زر لاستدعاء الدالة -->
 <a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
 
-<!-- إشعار مع صورة -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" id="imageToastContainer">
 
-</div>
 
+
+
+<!-- رابط لعرض رسالة الخطأ -->
+<a href="#" id="showErrorMessageLink" class="btn-outline-dark" dir="rtl">تحميل ملفات الدورة</a>
+
+<!-- Toast container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+
+<!-- ربط ملف JavaScript الخاص بـ Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- إضافة تنسيقات CSS -->
+<style>
+  .toast {
+    min-width: 300px;
+    margin-bottom: 10px;
+    color:#ccc222;
+
+
+
+  }
+
+  .toast-header {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color:#576574;
+    font-size:15px;
+
+
+  }
+
+  .toast-body {
+    padding: 10px;
+    font-size: 14px;
+
+  }
+
+  .toast-body small {
+    display: block;
+
+
+  }
+
+  .toast .btn-close {
+    padding: 0.2rem 0.4rem;
+    margin-left:5px;
+
+
+  }
+
+  .me-auto{
+    margin-left:5px;
+    }
+</style>
+
+<!-- دالة JavaScript -->
 <script>
+  function showErrorMessage() {
+    const toastElement = document.createElement('div');
+    toastElement.classList.add('toast', 'text-bg-danger', 'border-50');
+    toastElement.setAttribute('role', 'alert');
+    toastElement.setAttribute('aria-live', 'assertive');
+    toastElement.setAttribute('aria-atomic', 'true');
 
-
-
-
-
-  // إشعار مع صورة
-  document.getElementById('imageToastTrigger').addEventListener('click', function () {
-    const toastContainer = document.getElementById('imageToastContainer');
-    const newToast = document.createElement('div');
-    newToast.classList.add('toast', 'text-bg-danger', 'border-0');
-    newToast.setAttribute('role', 'alert');
-    newToast.innerHTML = `
+    toastElement.innerHTML = `
       <div class="toast-header">
-        <img src="https://via.placeholder.com/20" class="rounded me-2" alt="...">
-        <strong class="me-auto">إشعار مع صورة</strong>
+        <b class="me-auto">خطأ</b>
         <small>قبل قليل</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body">
-        هذا إشعار يحتوي على صورة.
+        حدث خطأ أثناء المعالجة. يرجى المحاولة لاحقًا.
       </div>
     `;
-    toastContainer.appendChild(newToast);
-    new bootstrap.Toast(newToast).show();
+
+    const toastContainer = document.querySelector('.position-fixed');
+    toastContainer.appendChild(toastElement);
+
+    new bootstrap.Toast(toastElement).show();
+  }
+
+  document.getElementById('showErrorMessageLink').addEventListener('click', function (event) {
+    event.preventDefault();
+    showErrorMessage();
   });
+</script>
 
 
 
 
+
+
+
+<script>
   // تعريف الدالة showToast
   function showToast() {
     const Toast = Swal.mixin({
@@ -614,6 +672,7 @@
                     <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
                     <p class="course-status paid" style="font-weight: bold; color: #c0392b; margin-top:10px; margin-right:10px;">70$</p>
                     <p class="course-date">تاريخ الدورة: 01‏/02‏/2021</p>
                 </div>
@@ -633,7 +692,7 @@
 
 </div>
 
-
+<p style="color: #EA2027;">الحالة :غير متوفر</p>
                     <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة: 26‏/05‏/2021</p>
                 </div>
@@ -655,6 +714,7 @@
                     <p>تعلم البرمجة باستخدام Python من البداية.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
                     <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة:
                         13‏/07‏/2023</p>
@@ -672,6 +732,7 @@
                     <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
                     <b>قناه / Codezilla</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
                     <p class="course-date">تاريخ الدورة:
                         30‏/12‏/2023</p>
@@ -689,6 +750,7 @@
                     <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
                     <b>قناه / AmmarAlkhatib </b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
                     <p class="course-date">تاريخ الدورة:
                         29‏/10‏/2020</p>
@@ -706,6 +768,7 @@
                     <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
                     <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p>
                 </div>
@@ -773,6 +836,52 @@
 
 
 <style>
+    /* button to download */
+
+ .btn-outline-dark {
+    width:120px;
+    padding: 14px 20px;
+    margin:15px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(#222f3e, #222f3e, #222f3e);
+    color: white;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير فوق الزر */
+.btn-outline-dark:hover {
+    background: linear-gradient(#576574, #222f3e, #576574);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3), -8px -8px 15px rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+    color:#fff;
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
+/* تأثير عند الضغط على الزر */
+.btn-outline-dark:active {
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+}
+
+    }
+
+    .btn-outline-dark:active{
+                        transform:translateY (2px);
+                        box-shadow: 0 14px 0px #4CAF50 , 0 8px rgba(0,0,0.0.2);
+    }
+
+
+
+
+
+
     /* images */
 
     .course-image{
@@ -780,8 +889,6 @@
     filter: drop-shadow(5px 2px 5px #2d3436);
     border-radius: 5px;
     opacity: 1;
-    width:200px;
-    height:auto;
 
     }
 
