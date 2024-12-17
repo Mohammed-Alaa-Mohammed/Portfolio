@@ -13,7 +13,7 @@
     <!--  مكتبة الرسائل  -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!--  لون  شريط الويب  -->
-    <meta name="theme-color" content="#187bcd">
+    <meta name="theme-color" content="#00000f">
     <title>Code Courses | Eng.Mohammed Alaa</title>
     <!--  ايقونة الموقع  -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4762/4762311.png">
@@ -76,8 +76,8 @@
             background-color: rgba(240, 248, 255, 0.7); /* Alice Blue with Transparency */
             border-bottom: 2px solid #0066cc;
         }
-        .hero-section h1{
-            font-size: 2.2rem;
+        .hero-section h1 {
+            font-size: 2.5rem;
             color: #0066cc;
             margin-bottom: 20px;
         }
@@ -256,13 +256,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section fade-in">
-        <h1 dir="rtl">مرحبًا بك في Code Courses !</h1>
-        <p dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة 
-<br>
-<b>
-وايضا كورسات مجانية.
-</b>
-</p>
+        <h1 dir="rtl">مرحبًا بك في موقعنا !</h1>
+        <p dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة.</p>
         <button onclick="alert('انت الآن في الصفحة الرئيسية يمكنك تصفح جميع المشاريع الخاصــة بالمطور ')" class="btn btn-outline-primary" style=
                 "width:150px;
                 height:45px;
@@ -504,53 +499,114 @@
 </div>
 
 <section>
-    <div id="courses-container">
+    <div id="filter-container" style="margin-bottom: 20px;">
+        <input type="text" id="search-coach" placeholder="ابحث عن دورات حسب المدرب..."
+            style="padding: 10px; font-size: 16px; width: 100%; max-width: 300px; margin: 0 auto; display: block; border: 1px solid #ccc; border-radius: 5px;">
+        <select id="course-type-filter" style="padding: 10px; font-size: 16px; width: 100%; max-width: 300px; margin: 20px auto; display: block; border: 1px solid #ccc; border-radius: 5px;">
+            <option value="">اختر نوع الدورة</option>
+            <option value="free">دورات مجانية</option>
+            <option value="paid">دورات مدفوعة</option>
+        </select>
+        <p id="error-message" style="color: red; text-align: center; display: none; font-weight: bold;">لم يتم العثور على دورات تطابق البحث.</p>
+    </div>
 
+    <div id="courses-container">
         <!-- دورة HTML الأساسية -->
-        <div class="course-core" data-date="08‏/01‏/2021" data-type="free">
+        <div class="course-core" data-date="08‏/01‏/2021" data-type="free" data-coach="م / أســـامــة الـــزيـــرو">
             <div class="course-header">
                 <img src="https://i.ytimg.com/vi/6QAELgirvjs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCf_Az0D0kKIqg10xDDEkVYCXuFaQ" alt="دورة HTML" class="course-image">
                 <div class="course-info">
                     <h3>دورة HTML الأساسية</h3>
                     <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
-                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة: 08‏/01‏/2021</p>
+
+
                 </div>
             </div>
-            <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank" content=10>ابدأ الآن</a>
+            <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank">ابدأ الآن</a>
+
+            <!-- زر لاستدعاء الدالة -->
+<a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
+
+<script>
+  // تعريف الدالة showToast
+  function showToast() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 5000, // زيادة مدة الرسالة لتكون أطول
+      timerProgressBar: true,
+      background: '#FFF', // تغيير خلفية الرسالة
+      color: '#000', // تغيير لون النص
+      iconColor: '#c23616', // تغيير لون الأيقونة
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      },
+      customClass: {
+        popup: 'custom-toast-popup',
+        title: 'custom-toast-title',
+      },
+      showCloseButton: true, // إضافة زر إغلاق
+      closeButtonHtml: '&times;', // تخصيص زر الإغلاق
+      didClose: () => {
+        console.log('Toast closed manually');
+      }
+    });
+
+    Toast.fire({
+      icon: "error",
+      title: "The Course Not Uncompleted...!"
+    });
+  }
+</script>
+
         </div>
 
         <!-- دورة CSS المتقدمة -->
-        <div class="course-core" data-date="01‏/02‏/2021" data-type="paid">
+        <div class="course-core" data-date="01‏/02‏/2021" data-type="paid" data-coach="م / أســـامــة الـــزيـــرو">
             <div class="course-header">
                 <img src="https://i.ytimg.com/vi/X1ulCwyhCVM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDkC-vNrtKaa-y2FSGQ9oGsv4XKdg" alt="دورة CSS" class="course-image">
                 <div class="course-info">
                     <h3>دورة CSS المتقدمة</h3>
                     <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
-                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
-                    <p class="course-date">تاريخ الدورة: 01‏/02‏/2021 15</p>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p class="course-status paid" style="font-weight: bold; color: #c0392b; margin-top:10px; margin-right:10px;">70$</p>
+                    <p class="course-date">تاريخ الدورة: 01‏/02‏/2021</p>
                 </div>
             </div>
             <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
         <!-- دورة JavaScript للمبتدئين -->
-        <div class="course-core" data-date="26‏/05‏/2021" data-type="free">
+        <div class="course-core" data-date="26‏/05‏/2021" data-type="free" data-coach="م / أســـامــة الـــزيـــرو">
             <div class="course-header">
                 <img src="https://i.ytimg.com/vi/GM6dQBmc-Xg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC7bmiWM5DxiYEk-iTeXzBPdnWbZg" alt="دورة JavaScript" class="course-image">
                 <div class="course-info">
                     <h3>دورة JavaScript للمبتدئين</h3>
                     <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
-                    <b>م / أســـامــة الـــزيـــرو</b>
-                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
-                    <p class="course-date">تاريخ الدورة:
-                        26‏/05‏/2021</p>
+                    <b>م / أســـامــة الـــزيـــرو</b><div class="course-rating">
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+
+</div>
+
+
+                    <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p class="course-date">تاريخ الدورة: 26‏/05‏/2021</p>
                 </div>
             </div>
             <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
         </div>
+
+        <!-- الدورة الرابعة -->
+
+
+
 
         <!-- دورة Python للمبتدئين -->
         <div class="course-core" data-date="13‏/07‏/2023" data-type="free">
@@ -560,6 +616,7 @@
                     <h3>دورة Python للمبتدئين</h3>
                     <p>تعلم البرمجة باستخدام Python من البداية.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
                     <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة:
                         13‏/07‏/2023</p>
@@ -576,6 +633,7 @@
                     <h3>دورة React JS للمطورين</h3>
                     <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
                     <b>قناه / Codezilla</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
                     <p class="course-date">تاريخ الدورة:
                         30‏/12‏/2023</p>
@@ -592,6 +650,7 @@
                     <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
                     <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
                     <b>قناه / AmmarAlkhatib </b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
                     <p class="course-date">تاريخ الدورة:
                         29‏/10‏/2020</p>
@@ -608,14 +667,70 @@
                     <h3>دورة تطوير الألعاب باستخدام Unity</h3>
                     <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
                     <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p>
                 </div>
             </div>
             <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
-    </div>
+
 </section>
+
+<script>
+    // دالة الفلترة حسب المدرب
+    document.getElementById('search-coach').addEventListener('input', function () {
+        let searchQuery = this.value.toLowerCase();
+        let courses = document.querySelectorAll('.course-core');
+        let found = false;
+
+        // التحقق من كل دورة ومقارنتها مع المدرب المطلوب
+        courses.forEach(course => {
+            let coach = course.getAttribute('data-coach').toLowerCase();
+            if (coach.includes(searchQuery)) {
+                course.style.display = 'block';
+                found = true;
+            } else {
+                course.style.display = 'none';
+            }
+        });
+
+        // عرض أو إخفاء رسالة الخطأ
+        let errorMessage = document.getElementById('error-message');
+        if (found) {
+            errorMessage.style.display = 'none';
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+
+    // دالة الفلترة حسب نوع الدورة
+    document.getElementById('course-type-filter').addEventListener('change', function () {
+        let selectedType = this.value;
+        let courses = document.querySelectorAll('.course-core');
+        let found = false;
+
+        // التحقق من نوع الدورة
+        courses.forEach(course => {
+            let type = course.getAttribute('data-type');
+            if (selectedType === '' || type === selectedType) {
+                course.style.display = 'block';
+                found = true;
+            } else {
+                course.style.display = 'none';
+            }
+        });
+
+        // عرض أو إخفاء رسالة الخطأ
+        let errorMessage = document.getElementById('error-message');
+        if (found) {
+            errorMessage.style.display = 'none';
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
+
 
 
 
@@ -627,8 +742,6 @@
     filter: drop-shadow(5px 2px 5px #2d3436);
     border-radius: 5px;
     opacity: 1;
-    width:200px;
-    height:auto;
 
     }
 
@@ -673,6 +786,47 @@
                         box-shadow: 0 14px 0px #4CAF50 , 0 8px rgba(0,0,0.0.2);
     }
 
+
+
+
+        /* تنسيق زر اصدار*/
+    /* الزر 3D */
+.btn-core-2 {
+    width:120px;
+    padding: 14px 20px;
+    margin:15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(#4CAF50, #4CAF50, #4CAF50);
+    color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير فوق الزر */
+.btn-core-2:hover {
+    background: linear-gradient(#4CAF50, #4CAF50, #4CAF50);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), -8px -8px 15px rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+    color:#fff;
+}
+
+/* تأثير عند الضغط على الزر */
+.btn-core-2:active {
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+}
+
+    }
+
+    .btn-core:active{
+                        transform:translateY (2px);
+                        box-shadow: 0 14px 0px #4CAF50 , 0 8px rgba(0,0,0.0.2);
+    }
 </style>
 
 <script>
@@ -1288,26 +1442,7 @@ Toast.fire({
             }
         };
 
-        function c () {
-Swal.fire({
-  title: '!عذرًا',
-  text: 'هذه الإضافة غير متوفرة الآن. يرجى المحاولة لاحقًا.',
-  icon: 'error',
-  iconColor: '#d63031',
-  background: '#fff',  // خلفية بلون أزرق فاتح
-  color: '#1565c0',  // نص باللون الأزرق الداكن
-  confirmButtonText: 'حسنًا',
-  confirmButtonColor: '#1565c0',  // زر بنفس اللون الأزرق الداكن
-  showCancelButton: false,
-  footer: '<small>نعتذر عن الإزعاج. يرجى المحاولة لاحقًا.</small>',
-  customClass: {
-    popup: 'custom-popup',
-    title: 'custom-title',
-    content: 'custom-content',
-    confirmButton: 'custom-confirm-button',
-    footer: 'custom-footer'
-  }
-});
+
 
         }
    </script>
