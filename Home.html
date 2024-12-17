@@ -776,14 +776,67 @@
             <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-    </section>
+</section>
+
+<script>
+    // دالة الفلترة حسب المدرب
+    document.getElementById('search-coach').addEventListener('input', function () {
+        let searchQuery = this.value.toLowerCase();
+        let courses = document.querySelectorAll('.course-core');
+        let found = false;
+
+        // التحقق من كل دورة ومقارنتها مع المدرب المطلوب
+        courses.forEach(course => {
+            let coach = course.getAttribute('data-coach').toLowerCase();
+            if (coach.includes(searchQuery)) {
+                course.style.display = 'block';
+                found = true;
+            } else {
+                course.style.display = 'none';
+            }
+        });
+
+        // عرض أو إخفاء رسالة الخطأ
+        let errorMessage = document.getElementById('error-message');
+        if (found) {
+            errorMessage.style.display = 'none';
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+
+    // دالة الفلترة حسب نوع الدورة
+    document.getElementById('course-type-filter').addEventListener('change', function () {
+        let selectedType = this.value;
+        let courses = document.querySelectorAll('.course-core');
+        let found = false;
+
+        // التحقق من نوع الدورة
+        courses.forEach(course => {
+            let type = course.getAttribute('data-type');
+            if (selectedType === '' || type === selectedType) {
+                course.style.display = 'block';
+                found = true;
+            } else {
+                course.style.display = 'none';
+            }
+        });
+
+        // عرض أو إخفاء رسالة الخطأ
+        let errorMessage = document.getElementById('error-message');
+        if (found) {
+            errorMessage.style.display = 'none';
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
 
 
-<!--  الجزء الخاص بالكارد الكورسات   -->
 
 
 <style>
-   /* button to download */
+    /* button to download */
 
  .btn-outline-dark {
     width:120px;
@@ -829,9 +882,6 @@
 
 
 
-
-
-
     /* images */
 
     .course-image{
@@ -839,6 +889,7 @@
     filter: drop-shadow(5px 2px 5px #2d3436);
     border-radius: 5px;
     opacity: 1;
+    width:300px;
 
     }
 
@@ -924,93 +975,6 @@
                         transform:translateY (2px);
                         box-shadow: 0 14px 0px #4CAF50 , 0 8px rgba(0,0,0.0.2);
     }
-
-/* استجابة للأحجام الصغيرة (أقل من 768px) */
-@media (max-width: 768px) {
-  .course-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-
-
-
-/* استجابة للأحجام المتوسطة (أقل من 992px) */
-@media (max-width: 992px) {
-  .course-info h3 {
-    font-size: 22px;
-  }
-
-}
-
-/* استجابة للأحجام الكبيرة (أكبر من 1200px) */
-@media (min-width: 1200px) {
-  .course-header {
-    flex-direction: row;
-    align-items: center;
-  }
-
-
-</style>
-<script>
-    // دالة الفلترة حسب المدرب
-    document.getElementById('search-coach').addEventListener('input', function () {
-        let searchQuery = this.value.toLowerCase();
-        let courses = document.querySelectorAll('.course-core');
-        let found = false;
-
-        // التحقق من كل دورة ومقارنتها مع المدرب المطلوب
-        courses.forEach(course => {
-            let coach = course.getAttribute('data-coach').toLowerCase();
-            if (coach.includes(searchQuery)) {
-                course.style.display = 'block';
-                found = true;
-            } else {
-                course.style.display = 'none';
-            }
-        });
-
-        // عرض أو إخفاء رسالة الخطأ
-        let errorMessage = document.getElementById('error-message');
-        if (found) {
-            errorMessage.style.display = 'none';
-        } else {
-            errorMessage.style.display = 'block';
-        }
-    });
-
-    // دالة الفلترة حسب نوع الدورة
-    document.getElementById('course-type-filter').addEventListener('change', function () {
-        let selectedType = this.value;
-        let courses = document.querySelectorAll('.course-core');
-        let found = false;
-
-        // التحقق من نوع الدورة
-        courses.forEach(course => {
-            let type = course.getAttribute('data-type');
-            if (selectedType === '' || type === selectedType) {
-                course.style.display = 'block';
-                found = true;
-            } else {
-                course.style.display = 'none';
-            }
-        });
-
-        // عرض أو إخفاء رسالة الخطأ
-        let errorMessage = document.getElementById('error-message');
-        if (found) {
-            errorMessage.style.display = 'none';
-        } else {
-            errorMessage.style.display = 'block';
-        }
-    });
-</script>
-
-
-
-
-<style>
-
 </style>
 
 <script>
