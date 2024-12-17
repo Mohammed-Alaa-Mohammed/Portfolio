@@ -672,8 +672,8 @@
                     <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
-                    <p class="course-status paid" style="font-weight: bold; color: #c0392b; margin-top:10px; margin-right:10px;">70$</p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status paid" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
                     <p class="course-date">تاريخ الدورة: 01‏/02‏/2021</p>
                 </div>
             </div>
@@ -692,7 +692,7 @@
 
 </div>
 
-<p style="color: #EA2027;">الحالة :غير متوفر</p>
+<p style="color: #EA2027;">الحالة : غير متوفر</p>
                     <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة: 26‏/05‏/2021</p>
                 </div>
@@ -714,7 +714,7 @@
                     <p>تعلم البرمجة باستخدام Python من البداية.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
                     <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
                     <p class="course-date">تاريخ الدورة:
                         13‏/07‏/2023</p>
@@ -732,7 +732,7 @@
                     <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
                     <b>قناه / Codezilla</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
                     <p class="course-date">تاريخ الدورة:
                         30‏/12‏/2023</p>
@@ -750,7 +750,7 @@
                     <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
                     <b>قناه / AmmarAlkhatib </b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
                     <p class="course-date">تاريخ الدورة:
                         29‏/10‏/2020</p>
@@ -768,7 +768,7 @@
                     <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة :غير متوفر</p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
                     <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
                     <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p>
                 </div>
@@ -839,10 +839,10 @@
     /* button to download */
 
  .btn-outline-dark {
-    width:100px;
+    width:120px;
     padding: 14px 20px;
-    margin:10px;
-    font-size: 14px;
+    margin:15px;
+    font-size: 17px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -878,6 +878,37 @@
     }
 
 
+    /* التأثير عند المرور على الزر */
+#showErrorMessageLink:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* استجابة للعرض الصغير */
+@media (max-width: 768px) {
+  #showErrorMessageLink {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* استجابة للعرض المتوسط */
+@media (max-width: 576px) {
+  #showErrorMessageLink {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* استجابة للعرض الكبير */
+@media (min-width: 1200px) {
+  #showErrorMessageLink {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+
+
 
 
 
@@ -885,7 +916,6 @@
     /* images */
 
     .course-image{
-    width:200px;
     transition: 1s;
     filter: drop-shadow(5px 2px 5px #2d3436);
     border-radius: 5px;
@@ -1533,91 +1563,65 @@ Toast.fire({
 
 
     </script>
-<button id="scrollButton" title="انتقل للأعلى" style="display: none;">
-  <i class="fas fa-angle-double-up"></i>
-</button>
 
-<style>
-  /* تنسيق الزر 3D متطور */
-  #scrollButton {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: linear-gradient(135deg, #007bff, #00c6ff);
-    color: #fff;
-    border: none;
-    border-radius: 15px;
-    padding: auto;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 8px 5px 1px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-    z-index: 1000;
-    animation: bounce-in 0.6s ease-out;
-      width:50px;
-      text-align:center;
-      height:50px;
-  }
+<!-- تضمين CSS داخل الوسم <style> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-  /* تأثيرات عند التحويم */
-  #scrollButton:hover {
-    transform: translateY(-10px);
-    background: linear-gradient(135deg, #0056b3, #0099ff);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
-  }
+        /* تنسيق الزر */
+        #scrollTopBtn {
 
-  #scrollButton:active {
-    transform: scale(0.95);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  }
+            text-align: center;
+            font-weight:bold;
+            position: fixed;
+            bottom: 20px; /* وضع الزر في أسفل الصفحة */
+            right: 20px;  /* وضع الزر على اليمين */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 30px;
+            display: none; /* إخفاء الزر في البداية */
+        }
 
-  /* تأثير ظهور الزر */
-  @keyframes bounce-in {
-    0% {
-      transform: translateY(100px);
-      opacity: 0;
-    }
-    60% {
-      transform: translateY(-10px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+        /* تغيير اللون عند مرور الماوس على الزر */
+        #scrollTopBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 
-  /* تنسيق الأيقونة */
-  #scrollButton i {
-    font-size: 28px;
-  }
-</style>
 
-<!-- تضمين Font Awesome للأيقونة -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  rel="stylesheet"
-/>
+    <!-- زر التمرير للأعلى -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">&#8593</button>
 
-<script>
-  // إظهار الزر بعد تمرير المستخدم لمسافة معينة
-  window.addEventListener("scroll", function () {
-    const scrollButton = document.getElementById("scrollButton");
-    const scrollPosition = window.scrollY;
+    <!-- تضمين JavaScript داخل الوسم <script> -->
+    <script>
+        // تعريف وظيفة التمرير للأعلى
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"  // التمرير السلس
+            });
+        }
 
-    if (scrollPosition > 200) {
-      scrollButton.style.display = "block";
-    } else {
-      scrollButton.style.display = "none";
-    }
-  });
+        // إظهار الزر عند التمرير لأسفل
+        window.onscroll = function() {
+            let button = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block"; // إظهار الزر بعد التمرير لأسفل
+            } else {
+                button.style.display = "none"; // إخفاء الزر إذا كنت في أعلى الصفحة
+            }
+        };
 
-  // التمرير إلى الأعلى عند الضغط على الزر
-  document
-    .getElementById("scrollButton")
-    .addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-</script>
+
+
         }
    </script>
 
