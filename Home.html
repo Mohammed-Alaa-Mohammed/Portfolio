@@ -536,10 +536,17 @@
 <a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
 
 <!-- إشعار مع صورة -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" id="imageToastContainer"></div>
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11" id="imageToastContainer">
+
+</div>
 
 <script>
-// إشعار مع صورة
+
+
+
+
+
+  // إشعار مع صورة
   document.getElementById('imageToastTrigger').addEventListener('click', function () {
     const toastContainer = document.getElementById('imageToastContainer');
     const newToast = document.createElement('div');
@@ -559,13 +566,6 @@
     toastContainer.appendChild(newToast);
     new bootstrap.Toast(newToast).show();
   });
-
-
-
-
-
-
-
 
 
 
