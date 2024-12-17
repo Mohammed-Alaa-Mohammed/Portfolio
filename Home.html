@@ -2,13 +2,20 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
+<!--  تعريف المؤلف  -->
     <meta name="author" content="Mohammed Alaa Mohammed">
-    <meta http-equiv="refresh" content="60; url=index.html">
+    <!--  التحويل الي الصفحة بعد مدة  -->
+    <meta http-equiv="refresh" content="12200; url=index.html">
+    <!--  محرر الاكواد المستعمل  -->
     <meta name="generator" content="Pycharm">
+    <!--  تجاوب الموقع  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  مكتبة الرسائل  -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!--  لون  شريط الويب  -->
     <meta name="theme-color" content="#00000f">
     <title>Code Courses | Eng.Mohammed Alaa</title>
+    <!--  ايقونة الموقع  -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4762/4762311.png">
 <!--    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/cyber-security-vol-2-1/256/Website_Security.png">-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -262,7 +269,6 @@
         <a href="Store-image.html" target="_blank">
         <button onclick="alert('غير مكتمل بعد تحت الإنشاء و التطوير')" class="btn btn-outline-success">مـــعــرض الــــصــــور</button>
             </a>
-
         <br>
         <br>
         <img src="pfi.jpg"
@@ -479,78 +485,226 @@
     </div>
 
     <!-- إضافة الفلترة -->
-    <div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-        <select id="filter-date" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
-            <option value="">تصفية حسب التاريخ</option>
-            <option value="newest">الأحدث</option>
-            <option value="oldest">الأقدم</option>
-        </select>
-        <select id="filter-type" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
-            <option value="">تصفية حسب النوع</option>
-            <option value="free">مجاني</option>
-            <option value="paid">مدفوع</option>
-        </select>
-    </div>
+<div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+    <select id="filter-date" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+        <option value="">تصفية حسب التاريخ</option>
+        <option value="newest">الأحدث</option>
+        <option value="oldest">الأقدم</option>
+    </select>
+    <select id="filter-type" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+        <option value="">تصفية حسب النوع</option>
+        <option value="free">مجاني</option>
+        <option value="paid">مدفوع</option>
+    </select>
+</div>
 
-    <!-- الكورسات -->
+<section>
     <div id="courses-container">
-        <div class="course-core" data-date="2023-12-10" data-type="free">
-            <h3>دورة HTML الأساسية</h3>
-            <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
-            <b>م / أســـامــة الـــزيـــرو</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+
+        <!-- دورة HTML الأساسية -->
+        <div class="course-core" data-date="08‏/01‏/2021" data-type="free">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/6QAELgirvjs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCf_Az0D0kKIqg10xDDEkVYCXuFaQ" alt="دورة HTML" class="course-image">
+                <div class="course-info">
+                    <h3>دورة HTML الأساسية</h3>
+                    <p>تعلم أساسيات HTML وتصميم صفحات الويب.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p class="course-date">تاريخ الدورة: 08‏/01‏/2021</p>
+                </div>
+            </div>
             <a href="https://www.youtube.com/watch?v=6QAELgirvjs&list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" class="btn-core" target="_blank">ابدأ الآن</a>
         </div>
 
-        <div class="course-core" data-date="2023-11-15" data-type="paid">
-            <h3>دورة CSS المتقدمة</h3>
-            <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
-            <b dir="auto">م / محمد علاء محمد</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
-            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        <!-- دورة CSS المتقدمة -->
+        <div class="course-core" data-date="01‏/02‏/2021" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/X1ulCwyhCVM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDkC-vNrtKaa-y2FSGQ9oGsv4XKdg" alt="دورة CSS" class="course-image">
+                <div class="course-info">
+                    <h3>دورة CSS المتقدمة</h3>
+                    <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
+                    <p class="course-date">تاريخ الدورة: 01‏/02‏/2021 15</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-        <div class="course-core" data-date="2024-01-05" data-type="free">
-            <h3>دورة JavaScript للمبتدئين</h3>
-            <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
-            <b>م / أســـامــة الـــزيـــرو</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+        <!-- دورة JavaScript للمبتدئين -->
+        <div class="course-core" data-date="26‏/05‏/2021" data-type="free">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/GM6dQBmc-Xg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC7bmiWM5DxiYEk-iTeXzBPdnWbZg" alt="دورة JavaScript" class="course-image">
+                <div class="course-info">
+                    <h3>دورة JavaScript للمبتدئين</h3>
+                    <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p class="course-date">تاريخ الدورة:
+                        26‏/05‏/2021</p>
+                </div>
+            </div>
             <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
         </div>
 
-        <div class="course-core" data-date="2023-12-01" data-type="free">
-            <h3>دورة Python للمبتدئين</h3>
-            <p>تعلم البرمجة باستخدام Python من البداية.</p>
-            <b>قناه / freecodecamp</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+        <!-- دورة Python للمبتدئين -->
+        <div class="course-core" data-date="13‏/07‏/2023" data-type="free">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/mvZHDpCHphk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCnbMi_h1t-_fAQ2BEl0xZAhLGq1A" alt="دورة Python" class="course-image">
+                <div class="course-info">
+                    <h3>دورة Python للمبتدئين</h3>
+                    <p>تعلم البرمجة باستخدام Python من البداية.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p class="course-date">تاريخ الدورة:
+                        13‏/07‏/2023</p>
+                </div>
+            </div>
             <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLzMcBGfZo4-kAqvR7chET9uD7lx3s8Xto" class="btn-core" target="_blank">ابدأ الآن</a>
         </div>
 
-        <div class="course-core" data-date="2024-02-20" data-type="paid">
-            <h3>دورة React JS للمطورين</h3>
-            <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
-            <b>م / يوسف محمود</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
-            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        <!-- دورة React JS للمطورين -->
+        <div class="course-core" data-date="30‏/12‏/2023" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/3AJfX4Cd64c/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBSdIcCFYeJBkf0Wm9BW5j-mf36jg" alt="دورة React" class="course-image">
+                <div class="course-info">
+                    <h3>دورة React JS للمطورين</h3>
+                    <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
+                    <b>قناه / Codezilla</b>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
+                    <p class="course-date">تاريخ الدورة:
+                        30‏/12‏/2023</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-        <div class="course-core" data-date="2023-11-20" data-type="paid">
-            <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
-            <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
-            <b>م / فاطمة صلاح</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
-            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        <!-- دورة تطوير تطبيقات الموبايل باستخدام Flutter -->
+        <div class="course-core" data-date="29‏/10‏/2020" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/lRercKJaAes/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAcYuWRPs2XNY_d6lZ5o62Yk_hd2Q" alt="دورة Flutter" class="course-image">
+                <div class="course-info">
+                    <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
+                    <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
+                    <b>قناه / AmmarAlkhatib </b>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
+                    <p class="course-date">تاريخ الدورة:
+                        29‏/10‏/2020</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-        <div class="course-core" data-date="2023-10-30" data-type="paid">
-            <h3>دورة تطوير الألعاب باستخدام Unity</h3>
-            <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
-            <b>م / خالد إبراهيم</b>
-            <p style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
-            <a href="index.html" class="btn-core" target="_blank" style="font-weight: bold;">إشترك الآن</a>
+        <!-- دورة git -->
+        <div class="course-core" data-date="11‏/06‏/2019" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/ACOiGZoqC8w/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAj9Vlixs-ADB_93nSwiBZzDlMyjg" alt="دورة Unity" class="course-image">
+                <div class="course-info">
+                    <h3>دورة تطوير الألعاب باستخدام Unity</h3>
+                    <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
+                    <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
     </div>
 </section>
+
+
+
+<style>
+    /* images */
+
+    .course-image{
+    transition: 1s;
+    filter: drop-shadow(5px 2px 5px #2d3436);
+    border-radius: 5px;
+    opacity: 1;
+
+    }
+
+
+
+
+
+    /* تنسيق زر الكورسات*/
+    /* الزر 3D */
+.btn-core {
+    width:120px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #6e7dff, #3a56e9);
+    color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير فوق الزر */
+.btn-core:hover {
+    background: linear-gradient(145deg, #3a56e9, #6e7dff);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), -8px -8px 15px rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+}
+
+/* تأثير عند الضغط على الزر */
+.btn-core:active {
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px rgba(255, 255, 255, 0.4);
+    transform: translateY(2px);
+}
+
+    }
+
+    .btn-core:active{
+                        transform:translateY (2px);
+                        box-shadow: 0 14px 0px #4CAF50 , 0 8px rgba(0,0,0.0.2);
+    }
+
+</style>
+
+<script>
+    document.getElementById("filter-date").addEventListener("change", filterCourses);
+    document.getElementById("filter-type").addEventListener("change", filterCourses);
+
+    function filterCourses() {
+        const dateFilter = document.getElementById("filter-date").value;
+        const typeFilter = document.getElementById("filter-type").value;
+        const courses = document.querySelectorAll(".course-core");
+
+        courses.forEach(course => {
+            let showCourse = true;
+
+            // تصفية حسب النوع
+            if (typeFilter && course.getAttribute("data-type") !== typeFilter) {
+                showCourse = false;
+            }
+
+            // تصفية حسب التاريخ
+            const courseDate = new Date(course.getAttribute("data-date"));
+            if (dateFilter === "newest" && courseDate < new Date()) {
+                showCourse = false;
+            } else if (dateFilter === "oldest" && courseDate > new Date()) {
+                showCourse = false;
+            }
+
+            // إظهار أو إخفاء الدورة بناءً على الفلاتر
+            if (showCourse) {
+                course.style.display = "block";
+            } else {
+                course.style.display = "none";
+            }
+        });
+    }
+</script>
+
+</section>
+
 
 <script>
     document.getElementById('search-input').addEventListener('input', function () {
@@ -644,14 +798,13 @@
         background-color: #0056b3;
     }
 </style>
-<section class="section fade-in" dir="rtl" id="count">
+<section class="section fade-in" dir="rtl">
     <h2 id="greeting" class="h-h"></h2>
     <h4 class="h-h" dir="rtl">عدد زوار الموقع : <span id="visitor-count" dir="rtl">0</span></h4>
     <p id="today-visits" class="p-p" dir="rtl"></p>
     <p id="current-time" class="p-p" dir="rtl"></p>
     <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" dir="rtl">إعادة تعيين الزيارات</button>
-    <br>
-    <div id="user-info" class="user-info" dir="rtl"></div>
+    <div id="user-info" class="user-info"></div>
 </section>
 
 <script>
@@ -689,6 +842,23 @@
             var r = Math.random() * 16 | 0,
                 v = c === 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
+        });
+    }
+
+    // دالة لجلب الموقع الجغرافي
+    function getGeoLocation() {
+        return new Promise((resolve, reject) => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    const location = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude
+                    };
+                    resolve(location);
+                }, reject);
+            } else {
+                reject("Geolocation not available");
+            }
         });
     }
 
@@ -764,12 +934,20 @@
     const lastVisitOS = visitDetails[visitDetails.length - 1].operatingSystem;
 
     userInfoDiv.innerHTML = `
-        <br>
         <h4>آخر زيارة:</h4>
         <p>التاريخ: ${lastVisitTime}</p>
         <p>الجهاز: ${lastVisitDeviceType}</p>
         <p>النظام: ${lastVisitOS}</p>
     `;
+
+    // جلب الموقع الجغرافي
+    getGeoLocation().then(location => {
+        const locationDiv = document.createElement("div");
+        locationDiv.innerHTML = `<h4>الموقع الجغرافي:</h4><p>الخط العرض: ${location.latitude}</p><p>الخط الطول: ${location.longitude}</p>`;
+        document.body.appendChild(locationDiv);
+    }).catch(error => {
+        console.error(error);
+    });
 
     // إعادة تعيين البيانات
     document.getElementById("reset-btn").addEventListener("click", function() {
@@ -778,6 +956,7 @@
         location.reload();
     });
 </script>
+
 
 
 
