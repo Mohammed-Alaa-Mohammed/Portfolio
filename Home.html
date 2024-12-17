@@ -1533,65 +1533,91 @@ Toast.fire({
 
 
     </script>
+<button id="scrollButton" title="انتقل للأعلى" style="display: none;">
+  <i class="fas fa-angle-double-up"></i>
+</button>
 
-<!-- تضمين CSS داخل الوسم <style> -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+  /* تنسيق الزر 3D متطور */
+  #scrollButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: auto;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 5px 1px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    animation: bounce-in 0.6s ease-out;
+      width:50px;
+      text-align:center;
+      height:50px;
+  }
 
-        /* تنسيق الزر */
-        #scrollTopBtn {
+  /* تأثيرات عند التحويم */
+  #scrollButton:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #0056b3, #0099ff);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+  }
 
-            text-align: center;
-            font-weight:bold;
-            position: fixed;
-            bottom: 20px; /* وضع الزر في أسفل الصفحة */
-            right: 20px;  /* وضع الزر على اليمين */
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 30px;
-            display: none; /* إخفاء الزر في البداية */
-        }
+  #scrollButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
 
-        /* تغيير اللون عند مرور الماوس على الزر */
-        #scrollTopBtn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  /* تأثير ظهور الزر */
+  @keyframes bounce-in {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
+  /* تنسيق الأيقونة */
+  #scrollButton i {
+    font-size: 28px;
+  }
+</style>
 
-    <!-- زر التمرير للأعلى -->
-    <button id="scrollTopBtn" onclick="scrollToTop()">&#8593</button>
+<!-- تضمين Font Awesome للأيقونة -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
 
-    <!-- تضمين JavaScript داخل الوسم <script> -->
-    <script>
-        // تعريف وظيفة التمرير للأعلى
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"  // التمرير السلس
-            });
-        }
+<script>
+  // إظهار الزر بعد تمرير المستخدم لمسافة معينة
+  window.addEventListener("scroll", function () {
+    const scrollButton = document.getElementById("scrollButton");
+    const scrollPosition = window.scrollY;
 
-        // إظهار الزر عند التمرير لأسفل
-        window.onscroll = function() {
-            let button = document.getElementById("scrollTopBtn");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                button.style.display = "block"; // إظهار الزر بعد التمرير لأسفل
-            } else {
-                button.style.display = "none"; // إخفاء الزر إذا كنت في أعلى الصفحة
-            }
-        };
+    if (scrollPosition > 200) {
+      scrollButton.style.display = "block";
+    } else {
+      scrollButton.style.display = "none";
+    }
+  });
 
-
-
+  // التمرير إلى الأعلى عند الضغط على الزر
+  document
+    .getElementById("scrollButton")
+    .addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
         }
    </script>
 
