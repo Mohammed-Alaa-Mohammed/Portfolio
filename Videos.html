@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل فيديو الدورات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <!--الموقع قيد التطوير-->   
+<div id="loadingSection" class="loading-section" dir="rtl">
+    <div class="development-message">
+        <i class="fa fa-cogs"></i>
+        <h1>الموقع قيد التطوير</h1>
+        <p class="sub-message">نعتذر عن أي إزعاج، نحن نعمل على تحسين الموقع.</p>
+        <p class="timer-message">سيتم إزالة هذه الرسالة بعد <span id="countdown">15</span> ثانية...</p>
+    </div>
+</div>
+
+<script>
+    
+</script>
+
+
+    
+    
+    
+    
+
+<h1>مشغل فيديو الدورة</h1>
+
+<!-- عرض اسم الفيديو الحالي -->
+<h2 id="current-video-title">اسم الفيديو الحالي  :  --</h2>
+
+<div id="player"></div>
+
+<!-- أزرار التحكم -->
+<div class="control-buttons">
+    <button onclick="previousVideo()">الفيديو السابق</button>
+    <button onclick="playVideo()">تشغيل</button>
+    <button onclick="pauseVideo()">إيقاف مؤقت</button>
+     <button onclick="nextVideo()">الفيديو التالي</button>
+    <button onclick="stopVideo()">إيقاف</button>
+    
+</div>
+
+<!-- شريط التقدم -->
+<div id="progress-container">
+    <div id="progress-bar">
+        <div id="progress"></div>
+    </div>
+    <input id="progress-control" type="range" value="0" min="0" step="1" style="margin-left:-4px; margin-top:20px;"/>
+</div>
+
+<!-- زر ملء الشاشة -->
+<button id="fullscreen-btn" onclick="toggleFullscreen()">ملء الشاشة</button>
+
+<!-- عرض قائمة الفيديوهات -->
+<div class="video-list" id="video-list">
+    <!-- سيتم إضافة الفيديوهات هنا -->
+</div>
+    
+    
+    
+</div>
+    
+    
+<script>
+    var player;
+    var currentVideoIndex = 0;  // تحديد الفيديو الحالي
+    var videoIds = [
+        {id: '6QAELgirvjs', title: 'الفيديو الأول'},
+        {id: '7LxA9qXUY5k', title: 'الفيديو الثاني'},
+        {id: 'QG5aEmS9Fu0', title: 'الفيديو الثالث'},
+        {id: 'dVgTBEYCseU', title: 'الفيديو الرابع'},
+        {id: 'qZv9ndMkD7o', title: 'الفيديو الخامس'},
+        {id: 'VJqRkOeZcBY', title: 'الفيديو السادس'},
+        {id: 'Dl9K8CXLwA4', title: 'الفيديو السابع'},
+        {id: 'h7T0TkzmLqA', title: 'الفيديو الثامن'},
+        {id: 'r0mW2z0U1eE', title: 'الفيديو التاسع'},
+        {id: 'e-TzjJ3y6Zs', title: 'الفيديو العاشر'},
+    										{id: '', title: 'الفيديو 11'},
+																				{id: '', title: 'الفيديو 12'},
+																				{id: '', title: 'الفيديو 13'},
+																				{id: '', title: 'الفيديو 14'},
+    										{id: '', title: 'الفيديو 15'},
+    										{id: '', title: 'الفيديو 16'},
+																				{id: '', title: 'الفيديو 17'},
+																				{id: '', title: 'الفيديو 18'},
+																				{id: '', title: 'الفيديو 19'},
+																				{id: '', title: 'الفيديو 20'},
+																				{id: '', title: 'الفيديو 21'},
+																				{id: '', title: 'الفيديو 22'},
+																				{id: '', title: 'الفيديو 23'},
+																				{id: '', title: 'الفيديو 24'},
+																				{id: '', title: 'الفيديو 25'},
+																				{id: '', title: 'الفيديو 26'},
+																				{id: '', title: 'الفيديو 27'},
+																				{id: '', title: 'الفيديو 28'},
+																				{id: '', title: 'الفيديو 29'},
+																				{id: '', title: 'الفيديو 20'},
+																				{id: '', title: 'الفيديو 31'},
+																				{id: '', title: 'الفيديو 32'},
+																				{id: '', title: 'الفيديو 33'},
+																				{id: '', title: 'الفيديو 34'},
+																				{id: '', title: 'الفيديو 35'},
+																				{id: '', title: 'الفيديو 36'},
+																			{id: 'HFdZULv_a2M', title: 'الفيديو 37'}
+    ];  // الفيديوهات
+// تحديث شريط التقدم عند سحب شريط التقدم
+document.getElementById('progress-control').addEventListener('input', function(event) {
+    var value = event.target.value;
+    var duration = player.getDuration();
+    var newTime = (value / 100) * duration;
+    player.seekTo(newTime, true); // الانتقال إلى الزمن المحدد
+});
+
+// تحديث شريط التقدم عند تغير الفيديو
+function updateProgress() {
+    var progress = player.getCurrentTime() / player.getDuration() * 100;
+    document.getElementById('progress').style.width = progress + '%';
+    document.getElementById('progress-control').value = progress;
+}
+    // تحميل الفيديو الأول
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: videoIds[currentVideoIndex].id,  // الفيديو الأول
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // عندما يصبح المشغل جاهزًا
+    function onPlayerReady(event) {
+        // تحديث شريط التقدم عند بدء التشغيل
+        setInterval(updateProgress, 1000);
+    }
+
+    // متابعة حالة المشغل
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+            // عندما يكون الفيديو قيد التشغيل، نقوم بتحديث شريط التقدم
+            setInterval(updateProgress, 1000);
+        }
+    }
+
+    // تحديث شريط التقدم
+    function updateProgress() {
+        var progress = player.getCurrentTime() / player.getDuration() * 100;
+        document.getElementById('progress').style.width = progress + '%';
+        document.getElementById('progress-control').value = progress;
+    }
+
+    // تغيير الفيديو
+    function changeYouTubeVideo(videoId) {
+        player.loadVideoById(videoId);
+        currentVideoIndex = videoIds.findIndex(video => video.id === videoId);
+        updateCurrentVideoTitle();
+    }
+
+    // عرض اسم الفيديو الحالي
+    function updateCurrentVideoTitle() {
+        document.getElementById('current-video-title').innerText = 'اسم الفيديو الحالي : ' + videoIds[currentVideoIndex].title;
+    }
+
+    // عرض جميع الفيديوهات في الواجهة
+    function displayVideoList() {
+        var videoListDiv = document.getElementById('video-list');
+        videoListDiv.innerHTML = '';  // تنظيف القائمة
+        videoIds.forEach((video, index) => {
+            var videoItem = document.createElement('div');
+            videoItem.className = 'video-item';
+            videoItem.innerText = video.title;
+            videoItem.onclick = function () {
+                changeYouTubeVideo(video.id);
+            };
+            videoListDiv.appendChild(videoItem);
+        });
+    }
+
+    // تشغيل الفيديو
+    function playVideo() {
+        player.playVideo();
+    }
+
+    // إيقاف الفيديو مؤقتًا
+    function pauseVideo() {
+        player.pauseVideo();
+    }
+
+    // إيقاف الفيديو
+    function stopVideo() {
+        player.stopVideo();
+    }
+
+    // الانتقال إلى الفيديو السابق
+    function previousVideo() {
+        currentVideoIndex = (currentVideoIndex - 1 + videoIds.length) % videoIds.length;
+        changeYouTubeVideo(videoIds[currentVideoIndex].id);
+    }
+
+    // الانتقال إلى الفيديو التالي
+    function nextVideo() {
+        currentVideoIndex = (currentVideoIndex + 1) % videoIds.length;
+        changeYouTubeVideo(videoIds[currentVideoIndex].id);
+    }
+
+    // تفعيل أو إلغاء وضع ملء الشاشة
+    function toggleFullscreen() {
+        var iframe = player.getIframe();
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            iframe.requestFullscreen();
+        }
+    }
+
+    // عرض قائمة الفيديوهات عند تحميل الصفحة
+    window.onload = function() {
+        displayVideoList();
+        updateCurrentVideoTitle();  // تحديث اسم الفيديو الحالي
+    };
+
+
+// جزؤ خاص بالتنقل الي صفحة اخري
+
+<!-- إضافة رابط للانتقال إلى الصفحة بعد مرور الوقت -->
+										let countdown = document.getElementById('countdown');
+    let loadingSection = document.getElementById('loadingSection');
+    let seconds = 15;
+    let timer = setInterval(function() {
+        seconds--;
+        countdown.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(timer);
+            loadingSection.style.display = 'none';  // إخفاء جزء التحميل بعد انتهاء الوقت
+        }
+    }, 1000);
+
+    
+</script>
+
+</body>
+</html>
