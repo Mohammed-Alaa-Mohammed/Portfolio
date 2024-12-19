@@ -17,7 +17,7 @@
         <i class="fa fa-cogs"></i>
         <h1>الموقع قيد التطوير</h1>
         <p class="sub-message">نعتذر عن أي إزعاج، نحن نعمل على تحسين الموقع.</p>
-        <p class="timer-message">سيتم إزالة هذه الرسالة بعد <span id="countdown">15</span> ثانية...</p>
+        <p class="timer-message">سيتم إزالة هذه الرسالة بعد <span id="countdown">10</span> ثانية...</p>
     </div>
 </div>
 
@@ -31,19 +31,20 @@
     
     
 
-<h1>مشغل فيديو الدورة</h1>
-
+<h2>مشغل فيديو خاص بالدورة</h2>
+    <!-- <b style="color:#666;">Developer : Mohammed Alaa Mohammed</b>
 <!-- عرض اسم الفيديو الحالي -->
-<h2 id="current-video-title">اسم الفيديو الحالي  :  --</h2>
+<h3 id="current-video-title">اسم الفيديو الحالي  :  --</h3>
 
 <div id="player"></div>
 
 <!-- أزرار التحكم -->
 <div class="control-buttons">
-    <button onclick="previousVideo()" style="background-color:#2e2e2e;">الفيديو السابق</button>
+    <button onclick="nextVideo()" style="background-color:#1e1e2e;">الفيديو التالي</button>
     <button onclick="playVideo()" style="background-color:#4AA02C;">تشغيل</button>
-    <button onclick="pauseVideo()" style="background-color:#2B547E;">إيقاف مؤقت</button>
-     <button onclick="nextVideo()" style="background-color:#1e1e2e;">الفيديو التالي</button>
+    <button onclick="pauseVideo()" style="background-color:#2B547E;">إيقاف مؤقت</button> 
+    <button onclick="previousVideo()" style="background-color:#2e2e2e;">الفيديو السابق</button>
+    
     <button onclick="stopVideo()" style="background-color:#800517;">إيقاف</button>
     
 </div>
@@ -244,7 +245,7 @@ function updateProgress() {
 <!-- إضافة رابط للانتقال إلى الصفحة بعد مرور الوقت -->
 										let countdown = document.getElementById('countdown');
     let loadingSection = document.getElementById('loadingSection');
-    let seconds = 1;
+    let seconds = 10;// تحديد الثواني
     let timer = setInterval(function() {
         seconds--;
         countdown.textContent = seconds;
