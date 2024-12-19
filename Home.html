@@ -245,7 +245,7 @@
         <a href="#skil">المهارات</a>
 <!--        <a href="Home.html">تنشيط الموقع</a>-->
         <a href="#core">قسم الكورسات</a>
-         <a href="#core" onclick="c();">ورشه العمل اونلاين</a>
+
         <a href="#notes">إرشادات </a>
         <a href="Your_Profile.html">الملف الشخصي</a>
         <a href="index.html">تسجيل الخروج </a>
@@ -256,18 +256,19 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section fade-in">
-        <h1 dir="rtl">مرحبًا بك في 
+        <h1 dir="rtl">مرحبًا بك في
 Code Courses !</h1>
-        <p dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة
+        <b dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة
 <br>
-<b>وايضاً كورسات تدريبية.</p>
-<a href="Core.html" target="_blank_"
+<b>وايضاً كورسات تدريبية.</b>
+<a href="Core.html" target="_blank_">
         <button onclick="alert('انت الآن في الصفحة الرئيسية يمكنك تصفح جميع المشاريع الخاصــة بالمطور ')" class="btn btn-outline-primary" style=
                 "width:150px;
                 height:45px;
                 font-weight: bold;
                 font-size: 1.2em;
-                border-radius: 4px;">ابدأ الآن</button></a>
+                border-radius: 4px;">ابدأ الآن</button>
+</a>
         <br>
         <br>
         <a href="Store-image.html" target="_blank">
@@ -294,7 +295,7 @@ Code Courses !</h1>
          <label dir="rtl">3 - 🔴 تدل علي ان المشروع غير متاح الآن
               <sub dir="ltr">  يتوقع ان يتوفر باقي  المشاريع اخر الشهر كحد اقـصــي</sub>
              <br>
-     </section>
+        </section>
 
 
     <!-- Projects Section -->
@@ -334,12 +335,12 @@ Code Courses !</h1>
 
             </a>
             </div>
-<center>
+
 
 <a href="my cv.pdf" target="_blank" dir="rtl">
     <button class="btn btn-danger">تحميل السيرة الذاتية</button>
 </a>
-</center>
+
 
 <style>
     /* إزالة التنسيق الافتراضي للرابط */
@@ -360,7 +361,7 @@ Code Courses !</h1>
         border: none;
         display: block;
         width: 50%; /* يجعل الزر يأخذ 80% من عرض الحاوية */
-        margin: 15px 350px 0px; /* مركز الزر في الصفحة */
+        margin: 15px 600px 0px; /* مركز الزر في الصفحة */
         text-align: center; /* محاذاة النص في الوسط */
         transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل مع التأثيرات */
     }
@@ -424,7 +425,7 @@ Code Courses !</h1>
     max-width: 1200px;
     margin: auto;
     text-decoration: none;
-   
+
 }
 
 .course-core {
@@ -631,7 +632,7 @@ Code Courses !</h1>
     </select>
 </div>
 
-<section">
+
     <div id="filter-container" style="margin-bottom: 20px;">
         <input type="text" id="search-coach" placeholder="ابحث عن دورات حسب المدرب..."
             style="padding: 10px; font-size: 16px; width: 100%; max-width: 300px; margin: 0 auto; display: block; border: 1px solid #ccc; border-radius: 5px;">
@@ -910,7 +911,7 @@ Code Courses !</h1>
             <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-</section>
+    </section>
 
 <script>
     // دالة الفلترة حسب المدرب
@@ -1062,212 +1063,257 @@ Code Courses !</h1>
 
                             <!--  جزء عدد الزوار  -->
 
+    <!-- قسم خاص بعدد الزوار -->
+  <!-- سكشن حساب الزوار -->
+<section class="page-section" dir="rtl">
+  <div class="container-count">
+    <h3 class="h3-count" style="font-weight:900;">عدد الزوار الحالي</h3>
+    <p class="p-count">عدد الزوار: <span id="visitor-count">0</span></p>
+    <p class="p-count">الوقت الحالي: <span id="current-time"></span></p>
 
- <style>
-    .h-h {
-        color: #444;
-        margin-bottom: 20px;
-    }
-    #visitor-count {
-        font-size: 2rem;
-        color: #28a745;
-        animation: pop 1s ease-in-out;
-    }
-    .p-p {
-        margin: 10px 0;
-        color: #555;
-    }
-    @keyframes pop {
-        0% { transform: scale(0.5); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
-    }
-    .btn btn-outline-danger {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        font-size: 20px;
-        margin-top: 20px;
-        border-radius: 5px;
-    }
-    .btn btn-outline-danger:hover {
-        background-color: #0056b3;
-    }
-</style>
-<section class="section fade-in" dir="rtl">
-    <h2 id="greeting" class="h-h"></h2>
-    <h4 class="h-h" dir="rtl">عدد زوار الموقع : <span id="visitor-count" dir="rtl">0</span></h4>
-    <p id="today-visits" class="p-p" dir="rtl"></p>
-    <p id="current-time" class="p-p" dir="rtl"></p>
-    <button id="reset-btn" class="btn btn-outline-danger" style="font-size:20px;" dir="rtl">إعادة تعيين الزيارات</button>
-    <div id="user-info" class="user-info"></div>
+    <!-- زر التبديل بين الوضعين -->
+    <button id="btn-mode" class="btn-mode">تبديل الوضع</button>
+  </div>
 </section>
 
+
 <script>
-    // دالة لاكتشاف نوع الجهاز
-    function getDeviceType() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        if (userAgent.includes("mobile")) {
-            return "Mobile";
-        } else if (userAgent.includes("tablet")) {
-            return "Tablet";
-        } else {
-            return "Desktop";
-        }
-    }
+// داله تغيير وضع - لون خلفية سكشن الزوار
 
-    // دالة لاكتشاف النظام (OS)
-    function getOS() {
-        const platform = navigator.platform.toLowerCase();
-        if (platform.includes("win")) return "Windows";
-        if (platform.includes("mac")) return "MacOS";
-        if (platform.includes("linux")) return "Linux";
-        if (platform.includes("android")) return "Android";
-        if (platform.includes("iphone") || platform.includes("ipad")) return "iOS";
-        return "Other";
-    }
+// التحقق مما إذا كان الوضع المظلم مفعلًا من قبل المستخدم
+function checkDarkMode() {
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    document.querySelector(".page-section").classList.add("dark-mode");
+    document.querySelector(".container-count").classList.add("dark-mode");
+    document.getElementById("btn-mode").classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+    document.querySelector(".page-section").classList.remove("dark-mode");
+    document.querySelector(".container-count").classList.remove("dark-mode");
+    document.getElementById("btn-mode").classList.remove("dark-mode");
+  }
+}
 
-    // دالة لحساب الفرق بالساعات بين تاريخين
-    function getHourDifference(date1, date2) {
-        return Math.abs(new Date(date1) - new Date(date2)) / 36e5; // تحويل الفرق إلى ساعات
-    }
+// تبديل الوضع عند الضغط على الزر
+function toggleDarkMode() {
+  // إذا كان الوضع المظلم مفعلًا بالفعل
+  if (document.body.classList.contains("dark-mode")) {
+    document.body.classList.remove("dark-mode");
+    document.querySelector(".page-section").classList.remove("dark-mode");
+    document.querySelector(".container-count").classList.remove("dark-mode");
+    document.getElementById("btn-mode").classList.remove("dark-mode");
+    localStorage.setItem("darkMode", "disabled");
+  } else {
+    document.body.classList.add("dark-mode");
+    document.querySelector(".page-section").classList.add("dark-mode");
+    document.querySelector(".container-count").classList.add("dark-mode");
+    document.getElementById("btn-mode").classList.add("dark-mode");
+    localStorage.setItem("darkMode", "enabled");
+  }
+}
 
-    // دالة لتوليد معرف فريد لكل جهاز
-    function generateUUID() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random() * 16 | 0,
-                v = c === 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
+// استدعاء الدالة عند تحميل الصفحة للتحقق من الوضع الحالي
+window.onload = checkDarkMode;
 
-    // دالة لجلب الموقع الجغرافي
-    function getGeoLocation() {
-        return new Promise((resolve, reject) => {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(position => {
-                    const location = {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude
-                    };
-                    resolve(location);
-                }, reject);
-            } else {
-                reject("Geolocation not available");
-            }
-        });
-    }
+// إضافة حدث لزر التبديل
+document.getElementById("btn-mode").addEventListener("click", toggleDarkMode);
 
-    // جلب البيانات
-    const deviceType = getDeviceType();
-    const operatingSystem = getOS();
-    let deviceId = localStorage.getItem("deviceId");
 
-    // إنشاء معرف جديد إذا لم يكن موجودًا
-    if (!deviceId) {
-        deviceId = generateUUID();
-        localStorage.setItem("deviceId", deviceId);
-    }
 
-    // جلب سجل جميع الزيارات
-    let visitsData = JSON.parse(localStorage.getItem("visitsData")) || {};
 
-    // التحقق من سجل الجهاز الحالي
-    if (!visitsData[deviceId]) {
-        visitsData[deviceId] = {
-            deviceType: deviceType,
-            operatingSystem: operatingSystem,
-            visitCount: 1,
-            lastVisit: new Date().toISOString(),
-            visitDetails: [{
-                visitTime: new Date().toISOString(),
-                deviceType: deviceType,
-                operatingSystem: operatingSystem
-            }]
-        };
+
+
+
+
+
+
+//=================================
+
+    // داله حساب الزوار
+function countVisits() {
+  // التحقق من إذا كان المتصفح يدعم localStorage
+  if (typeof(Storage) !== "undefined") {
+    // الحصول على عدد الزيارات ووقت آخر زيارة من localStorage
+    let visitCount = localStorage.getItem("visitorCount");
+    let lastVisit = localStorage.getItem("lastVisit");
+
+    // الحصول على التاريخ والوقت الحاليين
+    let currentDate = new Date();
+    let currentTimestamp = currentDate.getTime(); // الحصول على الطابع الزمني الحالي
+    let formattedDate = currentDate.toLocaleString(); // تنسيق التاريخ والوقت
+
+    // إذا كانت الزيارة الأولى أو مر أكثر من 24 ساعة منذ آخر زيارة
+    if (visitCount === null || currentTimestamp - lastVisit > 86400000) {
+      // إعادة تعيين عدد الزيارات إلى 0 بعد مرور 24 ساعة أو أول زيارة
+      visitCount = 0;
     } else {
-        // حساب الوقت منذ آخر زيارة
-        const lastVisit = visitsData[deviceId].lastVisit;
-        const hoursSinceLastVisit = getHourDifference(lastVisit, new Date().toISOString());
-
-        // إذا مر أكثر من 24 ساعة منذ آخر زيارة، زيادة العد
-        if (hoursSinceLastVisit >= 24) {
-            visitsData[deviceId].visitCount++;
-            visitsData[deviceId].visitDetails.push({
-                visitTime: new Date().toISOString(),
-                deviceType: deviceType,
-                operatingSystem: operatingSystem
-            });
-        }
-        visitsData[deviceId].lastVisit = new Date().toISOString();
+      // إذا لم يمضِ 24 ساعة، لا نزيد العدد
+      visitCount = parseInt(visitCount);
     }
 
-    // حفظ البيانات المُحدثة
-    localStorage.setItem("visitsData", JSON.stringify(visitsData));
-
-    // حساب العدد الإجمالي للزيارات
-    const totalVisits = Object.values(visitsData).reduce((sum, device) => sum + device.visitCount, 0);
-    document.getElementById("visitor-count").textContent = totalVisits;
-
-    // عرض تحية الوقت
-    const hour = new Date().getHours();
-    const greeting = hour < 12 ? "صباح الخير!" : hour < 18 ? "مساء الخير!" : "مساء الخير!";
-    document.getElementById("greeting").textContent = greeting;
-
-    // عرض الوقت الحالي
-    function updateTime() {
-        const currentTime = new Date().toLocaleString();
-        document.getElementById("current-time").textContent = `الوقت الحالي: ${currentTime}`;
+    // زيادة عدد الزيارات بمقدار 1 إذا مر 24 ساعة من آخر زيارة
+    if (currentTimestamp - lastVisit > 86400000) {
+      visitCount++;
     }
-    setInterval(updateTime, 1000);
-    updateTime();
 
-    // عرض تفاصيل الزيارة
-    const userInfoDiv = document.getElementById("user-info");
-    const visitDetails = visitsData[deviceId].visitDetails;
-    const lastVisitTime = visitDetails[visitDetails.length - 1].visitTime;
-    const lastVisitDeviceType = visitDetails[visitDetails.length - 1].deviceType;
-    const lastVisitOS = visitDetails[visitDetails.length - 1].operatingSystem;
+    // تخزين العدد الجديد من الزيارات ووقت الزيارة الحالي
+    localStorage.setItem("visitorCount", visitCount);
+    localStorage.setItem("lastVisit", currentTimestamp);
 
-    userInfoDiv.innerHTML = `
-        <h4>آخر زيارة:</h4>
-        <p>التاريخ: ${lastVisitTime}</p>
-        <p>الجهاز: ${lastVisitDeviceType}</p>
-        <p>النظام: ${lastVisitOS}</p>
-    `;
+    // عرض عدد الزيارات في الصفحة
+    document.getElementById("visitor-count").textContent = visitCount;
 
-    // جلب الموقع الجغرافي
-    getGeoLocation().then(location => {
-        const locationDiv = document.createElement("div");
-        locationDiv.innerHTML = `<h4>الموقع الجغرافي:</h4><p>الخط العرض: ${location.latitude}</p><p>الخط الطول: ${location.longitude}</p>`;
-        document.body.appendChild(locationDiv);
-    }).catch(error => {
-        console.error(error);
-    });
+    // تخصيص الرسالة بناءً على عدد الزيارات
+    let message = `لقد قمت بزيارة هذه الصفحة ${visitCount} مرات اليوم.`;
 
-    // إعادة تعيين البيانات
-    document.getElementById("reset-btn").addEventListener("click", function() {
-        localStorage.removeItem("visitsData");
-        localStorage.removeItem("deviceId");
-        location.reload();
-    });
+    // عرض التاريخ والوقت الحاليين في الرسالة
+    message += `<br>تمت الزيارة في : ${formattedDate}`;
+
+    // تخصيص الرسالة في العنصر p-count
+    document.querySelector(".p-count").innerHTML = message;
+  } else {
+    alert("متصفحك لا يدعم ميزة تخزين البيانات.");
+  }
+}
+
+// دالة لتحديث الوقت والتاريخ الحاليين
+function updateCurrentTime() {
+  // الحصول على التاريخ والوقت الحاليين
+  let currentDate = new Date();
+  let formattedDate = currentDate.toLocaleDateString(); // تنسيق التاريخ
+  let formattedTime = currentDate.toLocaleTimeString(); // تنسيق الوقت
+
+  // عرض التاريخ والوقت الحاليين في العنصر المحدد
+  document.getElementById("current-time").textContent = `${formattedDate} الساعة: ${formattedTime}`;
+}
+
+// استدعاء الدالة عند تحميل الصفحة
+window.onload = function() {
+  countVisits(); // استدعاء دالة عد الزيارات
+  updateCurrentTime(); // استدعاء دالة تحديث الوقت
+
+  // تحديث الوقت بشكل مستمر كل ثانية
+  setInterval(updateCurrentTime, 1000); // تحديث الوقت كل ثانية (1000 مللي ثانية)
+};
+
+
 </script>
+<style>
+    /* تنسيق جزء عدد الزوار*/
 
 
 
 
 
+.page-section {
+  margin:-20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 5px;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec); /* تدرج خلفية عصري */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1); /* تأثير ظل داخلي */
+  margin: 30px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
+.container-count {
 
+  text-align: center;
+  width: 100%;
+  max-width: auto;
+  padding: 20px 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
 
+/* تأثير عند تمرير الماوس على الحاوية */
+.container-count:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* العنوان داخل الحاوية */
+.h3-count {
+  color: #4CAF22;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* النصوص داخل الحاوية */
+.p-count {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* تنسيق خاص لعدد الزوار */
+#visitor-count {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.3em;
+  background-color: #f9fafb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* الزر الخاص بتبديل الوضع */
+button.btn-mode {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button.btn-mode:hover {
+  background-color: #45a049;
+}
+
+/* الوضع المظلم (Dark Mode) */
+body.dark-mode {
+  background-color: #212529;
+  color: #e0e0e0;
+}
+
+.page-section.dark-mode {
+  background: #212529; /* تدرج خلفية مظلمة */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3); /* تأثير ظل داخلي أكثر وضوحًا */
+}
+
+.container-count.dark-mode {
+  background-color: #212529;
+  border: 1px solid #444;
+}
+
+.container-count.dark-mode h3,
+.container-count.dark-mode p {
+  color: #dff9fb;
+}
+
+button.btn-mode.dark-mode {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+button.btn-mode.dark-mode:hover {
+  background-color: #555;
+}
+
+</style>
 <!--
-
-
-
-
-
 -->
 
           <!-- RATES -->
@@ -1298,12 +1344,7 @@ Code Courses !</h1>
                 font-weight: bold;
                 text-align: center;
                 color:#fff;
-
-
-
-
-
-        }
+       }
 
         h4 {
             color: #343a40;
@@ -1500,24 +1541,6 @@ Code Courses !</h1>
             }
         });
 
-            function clickeds() {
-
-            const Toast = Swal.mixin({
-  toast: true,
-  position: "top-end",
-  showConfirmButton: false,
-  timer: 9000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  }
-});
-Toast.fire({
-  icon: "success",
-  title: "سوف نرسل لك اشعار عند توفر المشروع"
-});
-
             }
 
 
@@ -1525,64 +1548,9 @@ Toast.fire({
 
 <!-- تضمين CSS داخل الوسم <style> -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* تنسيق الزر */
-        #scrollTopBtn {
-
-            text-align: center;
-            font-weight:bold;
-            position: fixed;
-            bottom: 20px; /* وضع الزر في أسفل الصفحة */
-            right: 20px;  /* وضع الزر على اليمين */
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 30px;
-            display: none; /* إخفاء الزر في البداية */
-        }
-
-        /* تغيير اللون عند مرور الماوس على الزر */
-        #scrollTopBtn:hover {
-            background-color: #0056b3;
-        }
-    </style>
 
 
-    <!-- زر التمرير للأعلى -->
-    <button id="scrollTopBtn" onclick="scrollToTop()">&#8593</button>
-
-    <!-- تضمين JavaScript داخل الوسم <script> -->
-    <script>
-        // تعريف وظيفة التمرير للأعلى
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"  // التمرير السلس
-            });
-        }
-
-        // إظهار الزر عند التمرير لأسفل
-        window.onscroll = function() {
-            let button = document.getElementById("scrollTopBtn");
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                button.style.display = "block"; // إظهار الزر بعد التمرير لأسفل
-            } else {
-                button.style.display = "none"; // إخفاء الزر إذا كنت في أعلى الصفحة
-            }
-        };
-
-
-
-        }
-   </script>
+        </style>
 
 </html>
 
