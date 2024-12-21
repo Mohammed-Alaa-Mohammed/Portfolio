@@ -239,7 +239,6 @@
 
 
         <a href="#about">عن الموقع</a>
-        <a href="#count">عدد زوار الموقع</a>
         <a href="#services">خدماتي</a>
         <a href="#projects">المشاريع</a>
         <a href="#skil">المهارات</a>
@@ -251,7 +250,6 @@
         <a href="index.html">تسجيل الخروج </a>
         <a href="#contact">اتصل بي</a>
 
-        <button id="dark-mode-toggle" class="btn btn-dark">تــــغـــيــر الـــــوضـــــــع</button>
     </nav>
 
     <!-- Hero Section -->
@@ -280,7 +278,7 @@ Code Courses !</h1>
         <br>
         <img src="https://img.freepik.com/premium-photo/3d-cartoon-computer-programmer-character-generative-ai_914383-1802.jpg"
               style="transition:1s; filter: drop-shadow(5px 10px 15px  #000); border-radius: 10px; opacity:1; width:305px; height:210px;">
-    </section>
+        </section>
 
 <!--    ارشادات للمستخدمين -->
 
@@ -1416,13 +1414,13 @@ button.btn-mode.dark-mode:hover {
        }
 
         h4 {
-            color: #343a40;
+            color: #95afc0;
             text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 40px;
         }
         h5 {
-            color: #495057;
+            color: #686de0;
             font-weight: bold;
             margin-top: 20px;
         }
@@ -1586,17 +1584,7 @@ button.btn-mode.dark-mode:hover {
     </footer>
 
     <script>
-        // Dark Mode Toggle
-        document.getElementById("dark-mode-toggle").addEventListener("click", function() {
-            document.body.classList.toggle("dark-mode");
-            const darkModeStatus = document.body.classList.contains("dark-mode");
-            localStorage.setItem("darkMode", darkModeStatus);
-        });
 
-        // Check for dark mode setting on load
-        if (localStorage.getItem("darkMode") === "true") {
-            document.body.classList.add("dark-mode");
-        }
 
         // Form Validation
         document.getElementById("contact-form").addEventListener("submit", function(event) {
