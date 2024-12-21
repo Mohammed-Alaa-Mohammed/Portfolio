@@ -457,7 +457,7 @@ a {
 
 
 <style>
-   .container-core {
+.container-core {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -478,15 +478,21 @@ a {
     box-sizing: border-box;
 }
 
+.course-core h3,
+.course-core p {
+    margin-bottom: 20px; /* مسافة بين النصوص والأزرار */
+}
+
 .btn-core:hover {
     color: #fff;
 }
 
-.btn-core, .btn-core-2, .btn-outline-dark {
+.btn-core, .btn-core-2 {
     margin: 8px;
     width: 100%;
     max-width: 200px;
     box-sizing: border-box;
+    margin-top: 15px; /* مسافة أعلى الأزرار */
 }
 
 .course-core h3 {
@@ -499,25 +505,16 @@ a {
     font-weight: bold;
 }
 
-/* button to download */
-.btn-outline-dark {
-    width: 100%;
-    max-width: 200px;
-    padding: 14px 20px;
-    margin: 15px;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(#222f3e, #222f3e, #222f3e);
-    color: white;
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
+.course-core p {
+    margin-bottom: 20px; /* مسافة بين النصوص */
 }
 
-.btn-outline-dark:hover {
+.btn-container {
+    margin-top: 20px; /* مسافة بين الأزرار وبقية العناصر */
+    text-align: center; /* محاذاة الأزرار في المنتصف */
+}
+
+.btn-outline-warning:hover {
     background: linear-gradient(#576574, #222f3e, #576574);
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3), -8px -8px 15px rgba(255, 255, 255, 0.4);
     transform: scale(1.1);
@@ -525,7 +522,7 @@ a {
     color: #fff;
 }
 
-.btn-outline-dark:active {
+.btn-outline-warning:active {
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px rgba(255, 255, 255, 0.4);
     transform: translateY(2px);
 }
@@ -588,6 +585,7 @@ a {
     background: linear-gradient(#45a049, #4CAF50);
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), -8px -8px 15px rgba(255, 255, 255, 0.4);
     transform: translateY(2px);
+    color: #fff;
 }
 
 .btn-core-2:active {
@@ -606,7 +604,7 @@ a {
         width: 100%;
     }
 
-    .btn-core, .btn-core-2, .btn-outline-dark {
+    .btn-core, .btn-core-2 {
         width: 100%;
         max-width: 180px;
         padding: 12px 15px;
@@ -629,7 +627,7 @@ a {
         margin: 10px 0;
     }
 
-    .btn-core, .btn-core-2, .btn-outline-dark {
+    .btn-core, .btn-core-2 {
         font-size: 13px;
     }
 
@@ -648,7 +646,7 @@ a {
         margin: 10px 0;
     }
 
-    .btn-core, .btn-core-2, .btn-outline-dark {
+    .btn-core, .btn-core-2 {
         font-size: 12px;
         padding: 10px 12px;
     }
@@ -657,6 +655,7 @@ a {
         width: 70%;
     }
 }
+
 
 
 </style>
@@ -706,49 +705,48 @@ a {
                     <h3>اسم الكورس : دورة HTML الأساسية</h3>
                     <p>الوصف : تعلم أساسيات HTML وتصميم صفحات الويب.</p>
                     <b>اسم المدرب : م / أســـامــة الـــزيـــرو</b>
-                    <p class="course-rate" style="margin-top:10px;">تقييم الدورة : <span>4.5/5</span></p>
-                    <p style="color: #006266;">الحالة : متوفر15 فيديو فقط </p>
-                    <p class="course-status free" style="font-weight: bold; color: #4CAA51; margin-top:10px; margin-right:1px; font-size:16px;"> سعر الكورس : مجاني - يتوفر مشغل خاص للكورس</p>
-
-                    <p id="course-p">  تاريخ الدورة : 08‏/01‏/2021</p>
-                    <p> عدد الدروس : 37 </p>
-                    <p class="course-b"> عدد المسَجلين : 3 </p>
 
 
 
-<style>
-    #course-p,.course-rate,.course-b{
-                font-size:14px;
-                display:center;
-                display:flex;
 
-
-    }
-
-</style>
 
 
                 </div>
             </div>
-            <a href="Videos.html" class="btn-core" target="_blank" style="width:200px;">ابدأ الآن</a>
+            <a href="Videos.html" class="btn-core" target="_blank">ابدأ الآن</a>
 
             <!-- زر لاستدعاء الدالة -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- استدعاء رسائل Bootstrap 5-->
 <a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
+<a href="javascript:void(0);" onclick="INFO();" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
 
 
 
 
 
-<!-- رابط لعرض رسالة الخطأ -->
-<a href="#" id="showErrorMessageLink" class="btn-outline-dark" dir="rtl">تحميل ملفات الدورة</a>
 
-<!-- Toast container -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
 
 
 
 <!-- إضافة تنسيقات CSS -->
 <style>
+
+    /* تنسيق زر تفاصيل الكورس*/
+     #btn-info{
+                    background-color:#0b6e74;
+                    color:#fff;
+                    border:#0b6e74;
+                    text-align: center;
+                    padding:10px;
+                    font-weight:bold;
+                    margin:5px;
+     }
+
+
+
+
+
+
   .toast {
     min-width: 300px;
     margin-bottom: 10px;
@@ -793,50 +791,91 @@ a {
 
 <!-- دالة JavaScript -->
 <script>
-  function showErrorMessage() {
-    const toastElement = document.createElement('div');
-    toastElement.classList.add('toast', 'text-bg-danger', 'border-50');
-    toastElement.setAttribute('role', 'alert');
-    toastElement.setAttribute('aria-live', 'assertive');
-    toastElement.setAttribute('aria-atomic', 'true');
 
-    toastElement.innerHTML = `
-      <div class="toast-header">
-        <b class="me-auto">خطأ</b>
-        <small>قبل قليل</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        الملفات غير متاحة في الوقت الحالي. يرجى المحاولة لاحقًا.
-      </div>
+// دالة زر تفاصيل الكورس
+function INFO() {
+    const courseDetails = `
+        <strong>اسم الكورس :  </strong> دورة HTML الأساسية<br><br>
+        <strong>الوصف :  </strong> تعلم أساسيات HTML وتصميم صفحات الويب.<br><br>
+        <strong>اسم المدرب : </strong> م / أســـامــة الـــزيـــرو<br><br>
+        <strong>تقييم الدورة : </strong> 4.5/5<br><br>
+        <strong>الحالة : </strong> متوفر - 15 فيديو فقط<br><br>
+        <strong>سعر الكورس : </strong> مجاني - يتوفر مشغل خاص للكورس<br><br>
+        <strong>تاريخ الدورة : </strong> 08‏/01‏/2021<br><br>
+        <strong>عدد الدروس : </strong> 37<br><br>
+        <strong>عدد المسَجلين : </strong> 3
     `;
 
-    const toastContainer = document.querySelector('.position-fixed');
-    toastContainer.appendChild(toastElement);
+    // Create modal container
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '50%';
+    modal.style.left = '50%';
+    modal.style.transform = 'translate(-50%, -50%)';
+    modal.style.backgroundColor = '#ffffff';
+    modal.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+    modal.style.padding = '20px';
+    modal.style.borderRadius = '10px';
+    modal.style.zIndex = '1000';
+    modal.style.width = '350px';
+    modal.style.textAlign = 'right';
+    modal.style.lineHeight = '1.8';
+    modal.style.fontFamily = 'Arial, sans-serif';
+    modal.style.fontSize = '14px';
+    modal.style.direction = 'rtl'; // Set text direction to RTL
+    modal.innerHTML = `
+        <h2 style="margin-bottom: 15px; color: #333; text-align: center;">معلومات الدورة</h2>
+        <p style="color: #555;">${courseDetails}</p>
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="closeModalButton" style="background-color: #f44336; color: #ffffff; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 14px;">إغلاق</button>
+        </div>
+    `;
 
-    new bootstrap.Toast(toastElement).show();
-  }
+    // Add modal to document
+    document.body.appendChild(modal);
 
-  document.getElementById('showErrorMessageLink').addEventListener('click', function (event) {
-    event.preventDefault();
-    showErrorMessage();
-  });
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.zIndex = '999';
+    overlay.id = 'modalOverlay';
+    document.body.appendChild(overlay);
+
+    // Add event listener to close button
+    document.getElementById('closeModalButton').addEventListener('click', closeModal);
+
+    // Add event listener to overlay
+    overlay.addEventListener('click', closeModal);
+
+    // Close modal function
+    function closeModal() {
+        // Smooth fade-out effect
+        modal.style.transition = 'opacity 0.3s';
+        overlay.style.transition = 'opacity 0.3s';
+        modal.style.opacity = '0';
+        overlay.style.opacity = '0';
+
+        setTimeout(() => {
+            document.body.removeChild(modal);
+            document.body.removeChild(overlay);
+        }, 300);
+    }
+}
 
 
-
-
-
-
-
-
-
-  // تعريف الدالة showToast
+    // داله زر اصدار النتيجة
+    // تعريف الدالة showToast
   function showToast() {
     const Toast = Swal.mixin({
       toast: true,
       position: "top-end",
       showConfirmButton: false,
-      timer: 5000, // زيادة مدة الرسالة لتكون أطول
+      timer: 2500, // زيادة مدة الرسالة لتكون أطول
       timerProgressBar: true,
       background: '#FFF', // تغيير خلفية الرسالة
       color: '#000', // تغيير لون النص
