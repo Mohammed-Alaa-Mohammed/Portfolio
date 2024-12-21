@@ -363,7 +363,7 @@ Code Courses !</h1>
         border: none;
         display: block;
         width: 50%; /* يجعل الزر يأخذ 80% من عرض الحاوية */
-        margin: 15px 600px 0px; /* مركز الزر في الصفحة */
+        margin: 15px 270px 0px; /* مركز الزر في الصفحة */
         text-align: center; /* محاذاة النص في الوسط */
         transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل مع التأثيرات */
     }
@@ -446,6 +446,7 @@ Code Courses !</h1>
 
 .btn-core, .btn-core-2, .btn-outline-dark {
     margin: 8px;
+
 }
 
 .course-core h3 {
@@ -605,8 +606,9 @@ Code Courses !</h1>
     }
 
     .btn-core, .btn-core-2, .btn-outline-dark {
-        font-size: 12px;
+        font-size: 13px;
         padding: 10px 12px;
+
     }
 
     .course-image {
@@ -661,19 +663,31 @@ Code Courses !</h1>
                     <h3>اسم الكورس : دورة HTML الأساسية</h3>
                     <p>الوصف : تعلم أساسيات HTML وتصميم صفحات الويب.</p>
                     <b>اسم المدرب : م / أســـامــة الـــزيـــرو</b>
-                    <p style="margin-top:15px;">تقييم الدورة : <span>4.5/5</span></p>
+                    <p class="course-rate" style="margin-top:10px;">تقييم الدورة : <span>4.5/5</span></p>
                     <p style="color: #006266;">الحالة : متوفر</p>
-                    <p class="course-status free" style="font-weight: bold; color: #4CAA51; margin-top:10px; margin-right:1px;">سعر الكورس : مجاني</p>
-<div class="p-p-styles" style="padding: 5px; font-size: 14px;">
-    <p class="course-date">                 
-  <b> عدد الدروس : 37 </b>
-<b> عدد المسَجلين : 3 </b>                      تاريخ الدورة : 08‏/01‏/2021</p>
-</div>
+                    <p class="course-status free" style="font-weight: bold; color: #4CAA51; margin-top:10px; margin-right:1px; font-size:16px;"> سعر الكورس : مجاني - يتوفر مشغل خاص للكورس</p>
+
+                    <p id="course-p">  تاريخ الدورة : 08‏/01‏/2021</p>
+                    <p> عدد الدروس : 37 </p>
+                    <p class="course-b"> عدد المسَجلين : 3 </p>
+
+
+
+<style>
+    #course-p,.course-rate,.course-b{
+                font-size:14px;
+                display:center;
+                display:flex;
+
+
+    }
+
+</style>
 
 
                 </div>
             </div>
-            <a href="Videos.html" class="btn-core" target="_blank">ابدأ الآن</a>
+            <a href="Videos.html" class="btn-core" target="_blank" style="width:200px;">ابدأ الآن</a>
 
             <!-- زر لاستدعاء الدالة -->
 <a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
