@@ -355,44 +355,79 @@ a {
     font-size: 1rem; /* حجم الخط مرن */
     font-weight: bold;
     border-radius: 8px; /* جعل الزوايا دائرية */
-    padding: 14px 25px; /* حجم مناسب للزر */
+    padding: 12px 20px; /* حجم الحشو الأساسي */
     background-color: #130f40; /* اللون الأساسي للزر */
-    color: white;
-    border: none;
-    display: block;
-    width: 50%; /* يجعل الزر يأخذ نصف عرض الحاوية */
-    margin: 15px auto; /* مركز الزر في الصفحة */
+    color: white; /* لون النص */
+    border: none; /* إزالة الإطار */
+    display: block; /* جعل الزر كتلة لتسهيل التمركز */
+    width: 30%; /* عرض الزر مناسب للأجهزة الكبيرة */
+    max-width: 400px; /* عرض أقصى للزر */
+    margin: 15px auto; /* مركز الزر أفقياً */
     text-align: center; /* محاذاة النص في الوسط */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل مع التأثيرات */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل */
 }
 
 /* تأثير عند التمرير فوق الزر */
 .btn-danger:hover {
     background-color: #c82333; /* تغيير اللون عند التمرير */
-    transform: scale(1.05); /* تأثير تكبير الزر عند التمرير */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التمرير */
+    transform: scale(1.05); /* تأثير التكبير */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل */
 }
 
-/* تصميم متجاوب */
-@media only screen and (max-width: 1200px) {
+/* تصميم متجاوب للشاشات الكبيرة جدًا */
+@media only screen and (min-width: 1440px) {
     .btn-danger {
-        width: 60%; /* ضبط العرض ليكون أكثر تجاوبًا */
+        font-size: 1.2rem; /* زيادة حجم الخط */
+        padding: 14px 24px; /* تعديل الحشو */
+        width: 70%; /* تقليل العرض */
+        margin-left:-500px;
     }
 }
 
-@media only screen and (max-width: 768px) {
+/* تصميم متجاوب لأجهزة اللابتوب */
+@media only screen and (max-width: 1440px) and (min-width: 1024px) {
     .btn-danger {
-        font-size: 1rem; /* تصغير حجم الخط في الشاشات الصغيرة */
-        padding: 12px 22px; /* تعديل حجم الحشو */
-        width: 80%; /* تقليل العرض */
+        font-size: 1rem; /* حجم الخط الأساسي */
+        padding: 12px 20px; /* حشو قياسي */
+        width: 80%; /* عرض مناسب لأجهزة اللابتوب */
+        margin-left:-200px;
     }
 }
 
+/* تصميم متجاوب للأجهزة اللوحية */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .btn-danger {
+        font-size: 1.2rem; /* تصغير حجم الخط */
+        padding: 10px 18px; /* تقليل الحشو */
+        width: 90%; /* عرض مناسب للأجهزة اللوحية */
+        margin-left:-200px;
+    }
+}
+
+/* تصميم متجاوب للهواتف الكبيرة */
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+    .btn-danger {
+        font-size: 0.9rem; /* تصغير حجم الخط */
+        padding: 8px 15px; /* تقليل الحشو */
+        width: 60%; /* عرض مناسب للهواتف الكبيرة */
+    }
+}
+
+/* تصميم متجاوب للهواتف الصغيرة */
 @media only screen and (max-width: 480px) {
     .btn-danger {
-        font-size: 1.1rem; /* تصغير الخط في الشاشات الصغيرة جدًا */
-        padding: 10px 20px; /* تعديل الحشو */
-        width: 90%; /* تصغير العرض ليشمل معظم مساحة الشاشة */
+        font-size: 1.2rem; /* حجم الخط أصغر */
+        padding: 6px 12px; /* تقليل الحشو */
+        width: 80%; /* عرض الزر كبير نسبيًا */
+    }
+}
+
+/* تصميم متجاوب للشاشات الصغيرة جدًا */
+@media only screen and (max-width: 360px) {
+    .btn-danger {
+        font-size: 0.8rem; /* حجم الخط أصغر قليلاً */
+        padding: 5px 10px; /* تقليل الحشو */
+        width: 90%; /* عرض الزر شبه كامل */
     }
 }
 
