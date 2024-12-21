@@ -346,55 +346,56 @@ Code Courses !</h1>
 
 <style>
     /* إزالة التنسيق الافتراضي للرابط */
-    a {
-        text-decoration: none; /* إزالة الخط الأزرق السفلي */
-    }
+a {
+    text-decoration: none; /* إزالة الخط الأزرق السفلي */
+}
 
-    /* تنسيق الزر */
+/* تنسيق الزر */
+.btn-danger {
+    font-size: 1rem; /* حجم الخط مرن */
+    font-weight: bold;
+    border-radius: 8px; /* جعل الزوايا دائرية */
+    padding: 14px 25px; /* حجم مناسب للزر */
+    background-color: #130f40; /* اللون الأساسي للزر */
+    color: white;
+    border: none;
+    display: block;
+    width: 50%; /* يجعل الزر يأخذ نصف عرض الحاوية */
+    margin: 15px auto; /* مركز الزر في الصفحة */
+    text-align: center; /* محاذاة النص في الوسط */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل مع التأثيرات */
+}
+
+/* تأثير عند التمرير فوق الزر */
+.btn-danger:hover {
+    background-color: #c82333; /* تغيير اللون عند التمرير */
+    transform: scale(1.05); /* تأثير تكبير الزر عند التمرير */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التمرير */
+}
+
+/* تصميم متجاوب */
+@media only screen and (max-width: 1200px) {
     .btn-danger {
-
-
-        font-size: 1rem; /* حجم الخط مرن */
-        font-weight: bold;
-        border-radius: 8px; /* جعل الزوايا دائرية */
-        padding: 14px  25px; /* حجم مناسب للزر */
-        background-color: #130f40; /* اللون الأساسي للزر */
-        color: white;
-        border: none;
-        display: block;
-        width: 50%; /* يجعل الزر يأخذ 80% من عرض الحاوية */
-        margin: 15px 270px 0px; /* مركز الزر في الصفحة */
-        text-align: center; /* محاذاة النص في الوسط */
-        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* تحسين التفاعل مع التأثيرات */
+        width: 60%; /* ضبط العرض ليكون أكثر تجاوبًا */
     }
+}
 
-    /* تأثير عند التمرير فوق الزر */
-    .btn-danger:hover {
-        background-color: #c82333; /* تغيير اللون عند التمرير */
-        transform: scale(1.05); /* تأثير تكبير الزر عند التمرير */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التمرير */
+@media only screen and (max-width: 768px) {
+    .btn-danger {
+        font-size: 1rem; /* تصغير حجم الخط في الشاشات الصغيرة */
+        padding: 12px 22px; /* تعديل حجم الحشو */
+        width: 80%; /* تقليل العرض */
     }
+}
 
-    /* تعديل حجم الزر في الشاشات الصغيرة */
-    @media only screen and (max-width: 768px) {
-        .btn-danger {
-            font-size: 1rem; /* تصغير حجم الخط في الشاشات الصغيرة */
-            padding: 12px  22px; /* تعديل حجم الحشو */
-            max-width: 320px; /* تصغير العرض الأقصى */
-            margin:15px  0px 0;
-        }
+@media only screen and (max-width: 480px) {
+    .btn-danger {
+        font-size: 1.1rem; /* تصغير الخط في الشاشات الصغيرة جدًا */
+        padding: 10px 20px; /* تعديل الحشو */
+        width: 90%; /* تصغير العرض ليشمل معظم مساحة الشاشة */
     }
+}
 
-    /* تعديل حجم الزر في الشاشات الصغيرة جدًا */
-    @media only screen and (max-width: 480px) {
-        .btn-danger {
-            font-size: 0.9rem; /* تصغير الخط في الشاشات الصغيرة جدًا */
-            padding: 10px 20px; /* تعديل الحشو */
-            max-width: 280px; /* تصغير العرض الأقصى */
-            margin:15px  80px 0;
-
-        }
-    }
 </style>
 
 
@@ -1575,15 +1576,7 @@ button.btn-mode.dark-mode:hover {
         });
 
             }
-
-
     </script>
-
-<!-- تضمين CSS داخل الوسم <style> -->
-    <style>
-
-
-        </style>
 
 </html>
 
