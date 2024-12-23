@@ -23,6 +23,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!-- إضافة مكتبة Toastify من خلال CDN -->
+<link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <style>
         /* Basic Styles */
         body {
@@ -182,13 +186,48 @@
 
 
         /* Footer */
-        .footer {
-            background-color: #0066cc;
-            color: white;
-            padding:5px;
-            text-align: center;
+        /* تنسيق الفوتر */
+.footer {
+    display: flex;  /* استخدام flexbox */
+    justify-content: center;  /* محاذاة النص في المنتصف أفقيًا */
+    align-items: center;  /* محاذاة النص في المنتصف عموديًا */
+    background-color: #0066cc;  /* خلفية داكنة */
+    color: #fff;  /* نص أبيض */
+    text-align: center;  /* محاذاة النص داخل الفقرة */
+    padding: 20px 0;  /* مسافات حول الفوتر */
+    font-size: 1rem;  /* حجم خط افتراضي */
+    margin-top: 20px;  /* مسافة من الأعلى */
+}
 
-        }
+/* تنسيق النص في الفوتر */
+.footer p {
+    margin: 0;  /* إزالة المسافات الافتراضية حول الفقرة */
+    font-family: Arial, sans-serif;  /* الخط المستخدم */
+    font-size: 0.9rem;  /* حجم خط مناسب */
+}
+
+/* تنسيق للأجهزة الصغيرة */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 15px 0;  /* تقليل المسافات في الأجهزة الصغيرة */
+    }
+
+    .footer p {
+        font-size: 0.85rem;  /* تصغير حجم الخط للأجهزة الصغيرة */
+    }
+}
+
+/* تنسيق للأجهزة الكبيرة */
+@media screen and (min-width: 1200px) {
+    .footer {
+        padding: 25x 0;  /* زيادة المسافات في الأجهزة الكبيرة */
+    }
+
+    .footer p {
+        font-size: 1rem;  /* حجم خط أكبر للأجهزة الكبيرة */
+    }
+}
+
 
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -242,7 +281,8 @@
         <a href="#services">خدماتي</a>
         <a href="#projects">المشاريع</a>
         <a href="#skil">المهارات</a>
-        <a href="#" onclick="Push(); return false;">السماح بالإشعارات</a>
+        <a href="#" id="PUSH" onclick="toggleNotifications(); return false;">تمكين/إلغاء الإشعارات</a>
+
         <a href="#core">قسم الكورسات</a>
 
         <a href="#notes">إرشادات </a>
@@ -1004,7 +1044,7 @@ function INFO() {
             <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-        </section>
+    </section>
 
 <script>
     // دالة الفلترة حسب المدرب
@@ -1059,7 +1099,7 @@ function INFO() {
         }
     });
 
-// filter course
+
 
     document.getElementById("filter-date").addEventListener("change", filterCourses);
     document.getElementById("filter-type").addEventListener("change", filterCourses);
@@ -1093,7 +1133,12 @@ function INFO() {
             }
         });
     }
+</script>
 
+
+
+
+<script>
     document.getElementById('search-input').addEventListener('input', function () {
         const query = this.value.toLowerCase();
         const courses = document.querySelectorAll('.course-core');
@@ -1599,7 +1644,7 @@ button.btn-mode.dark-mode:hover {
     <!-- Footer -->
 
     <footer class="footer">
-        <br>
+
 
         <p>  © 2024 جميع الحقوق محفوظة للمطور | محمد علاء محمد</p>
     </footer>
@@ -1622,17 +1667,67 @@ button.btn-mode.dark-mode:hover {
             }
 
 
-   function Push() {
-    Notification.requestPermission().then((permission) => {
-        if (permission !== "granted") {
-            return; // إذا لم يتم منح الإذن، إنهاء الوظيفة
-        }
-        // إنشاء الإشعار
-        const notification = new Notification('Code Courses Notification', {
-            body: "Unread message(2)",
+// ==========================================
+    </script>
+
+ <script>
+      let notificationsEnabled = false; // متغير لحفظ حالة الإشعارات
+
+// دالة تفعيل أو تعطيل الإشعارات
+function toggleNotifications() {
+    // إذا كانت الإشعارات مفعلة بالفعل
+    if (notificationsEnabled) {
+        notificationsEnabled = false;
+        showPopUp("تم تعطيل الإشعارات", "error"); // عرض رسالة Pop-up لتأكيد تعطيل الإشعارات
+    } else {
+        // طلب إذن للإشعارات
+        Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+                notificationsEnabled = true;
+                showPopUp("تم تمكين الإشعارات بنجاح", "success"); // عرض رسالة Pop-up لتأكيد تفعيل الإشعارات
+
+                // إرسال إشعار تلقائي عند تفعيل الإشعارات
+                const notification = new Notification('إشعار جديد', {
+                    body: "تم تمكين الإشعارات بنجاح. اضغط لفتح المزيد.",
+                    icon: "https://cdn-icons-png.flaticon.com/512/4762/4762311.png",  // يمكنك استبدال الأيقونة
+                    timestamp: new Date().toLocaleString() // إضافة الوقت للإشعار
+                });
+
+                // إضافة حدث عند النقر على الإشعار
+                notification.onclick = function () {
+                    window.open("https://mohammed-alaa-mohammed.github.io/Portfolio/", "_blank"); // فتح رابط عند النقر على الإشعار
+                };
+            } else {
+                showPopUp("تم رفض الإذن بالإشعارات.", "warning"); // عرض رسالة Pop-up لرفض الإذن
+            }
+        }).catch((error) => {
+            console.error("حدث خطأ أثناء طلب الإذن:", error);
+            showPopUp("حدث خطأ أثناء طلب الإشعار.", "error"); // عرض رسالة Pop-up عند حدوث خطأ
         });
-    });
+    }
 }
+
+// دالة لعرض الرسائل المنبثقة (Pop-up)
+function showPopUp(message, type) {
+    let color = "#28a745"; // اللون الافتراضي (نجاح)
+
+    if (type === "error") {
+        color = "#dc3545"; // اللون عند حدوث خطأ
+    } else if (type === "warning") {
+        color = "#ffc107"; // اللون عند التحذير
+    }
+
+    Toastify({
+        text: message,
+        duration: 3000, // مدة ظهور الرسالة 3 ثوانٍ
+        gravity: "top", // تحديد مكان ظهور الرسالة: أعلى الصفحة
+        position: "right", // تحديد مكان الرسالة: على اليمين
+        backgroundColor: color, // تحديد لون خلفية الرسالة
+        close: true, // إظهار زر لإغلاق الرسالة
+        stopOnFocus: true, // إيقاف الرسالة عند التفاعل معها
+    }).showToast();
+}
+
 
     </script>
 
