@@ -40,18 +40,19 @@
 
         }
 
-       
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #999;
+            text-color: white;
+        }
+
         /* Navbar */
         .navbar {
             padding: 1rem;
             background-color: rgba(0, 102, 204, 0.8); /* Light Blue with Transparency */
             transition: background-color 0.3s ease;
             text-align: center;
-            position: fixed;
-            top:0;
-            right:0;
-
- /* تجعل الشريط ثابت ومتحرك */
+            position: sticky; /* تجعل الشريط ثابت ومتحرك */
 
         }
 
@@ -241,7 +242,7 @@
         <a href="#services">خدماتي</a>
         <a href="#projects">المشاريع</a>
         <a href="#skil">المهارات</a>
-<!--        <a href="Home.html">تنشيط الموقع</a>-->
+        <a href="#" onclick="Push(); return false;">السماح بالإشعارات</a>
         <a href="#core">قسم الكورسات</a>
 
         <a href="#notes">إرشادات </a>
@@ -694,13 +695,8 @@ a {
                 <img src="https://i.ytimg.com/vi/6QAELgirvjs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCf_Az0D0kKIqg10xDDEkVYCXuFaQ" alt="دورة HTML" class="course-image">
                 <div class="course-info">
                     <h3>اسم الكورس : دورة HTML الأساسية</h3>
-                    <h6>الوصف : تعلم أساسيات HTML وتصميم صفحات الويب.</h6>
+                    <p>الوصف : تعلم أساسيات HTML وتصميم صفحات الويب.</p>
                     <b>اسم المدرب : م / أســـامــة الـــزيـــرو</b>
-
-
-
-
-
 
                 </div>
             </div>
@@ -708,7 +704,7 @@ a {
 
             <!-- زر لاستدعاء الدالة -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- استدعاء رسائل Bootstrap 5-->
-<a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>
+<!--<a href="javascript:void(0);" onclick="showToast();" class="btn-core-2">اصدار النتيجة</a>-->
 <a href="javascript:void(0);" onclick="INFO();" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
 
 
@@ -979,7 +975,7 @@ function INFO() {
                 <img src="https://i.ytimg.com/vi/lRercKJaAes/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAcYuWRPs2XNY_d6lZ5o62Yk_hd2Q" alt="دورة Flutter" class="course-image">
                 <div class="course-info">
                     <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
-                    <h6>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</h6>
+                    <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
                     <b>قناه / AmmarAlkhatib </b>
                     <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
                     <p style="color: #EA2027;">الحالة : غير متوفر</p>
@@ -1008,7 +1004,7 @@ function INFO() {
             <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
         </div>
 
-    </section>
+        </section>
 
 <script>
     // دالة الفلترة حسب المدرب
@@ -1063,7 +1059,7 @@ function INFO() {
         }
     });
 
-
+// filter course
 
     document.getElementById("filter-date").addEventListener("change", filterCourses);
     document.getElementById("filter-type").addEventListener("change", filterCourses);
@@ -1097,12 +1093,7 @@ function INFO() {
             }
         });
     }
-</script>
 
-
-
-
-<script>
     document.getElementById('search-input').addEventListener('input', function () {
         const query = this.value.toLowerCase();
         const courses = document.querySelectorAll('.course-core');
@@ -1629,6 +1620,20 @@ button.btn-mode.dark-mode:hover {
         });
 
             }
+
+
+   function Push() {
+    Notification.requestPermission().then((permission) => {
+        if (permission !== "granted") {
+            return; // إذا لم يتم منح الإذن، إنهاء الوظيفة
+        }
+        // إنشاء الإشعار
+        const notification = new Notification('Code Courses Notification', {
+            body: "Unread message(2)",
+        });
+    });
+}
+
     </script>
 
 </html>
