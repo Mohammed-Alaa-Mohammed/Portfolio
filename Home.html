@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+<!--  تعريف المؤلف  -->
+    <meta name="author" content="Mohammed Alaa Mohammed">
+    <!--  التحويل الي الصفحة بعد مدة  -->
+    <meta http-equiv="refresh" content="12200; url=index.html">
+    <!--  محرر الاكواد المستعمل  -->
+    <meta name="generator" content="Pycharm">
+    <!--  تجاوب الموقع  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  مكتبة الرسائل  -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!--  لون  شريط الويب  -->
+    <meta name="theme-color" content="#00000f">
+    <title>Free Code Courses</title>
+    <!--  ايقونة الموقع  -->
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/3d-applications/128/app_icons_web_development___logo_chrome_website_browser_google.png">
+<!--    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/cyber-security-vol-2-1/256/Website_Security.png">-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!-- إضافة مكتبة Toastify من خلال CDN -->
+<link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" href="style_Home_Page.css">
+
+
+    
+</head>
+
+    <!-- Navbar -->
+    <nav class="navbar" dir="auto">
+
+
+        <a href="#about">عن الموقع</a>
+        <a href="#services">خدماتي</a>
+        <a href="#projects">المشاريع</a>
+        <a href="#skil">المهارات</a>
+        <a href="#" id="PUSH" onclick="toggleNotifications(); return false;">تمكين/إلغاء الإشعارات</a>
+
+        <a href="#core">قسم الكورسات</a>
+
+        <!-- <a href="#notes">إرشادات </a> -->
+        <a href="Your_Profile.html">الملف الشخصي</a>
+        <a href="index.html">تسجيل الخروج </a>
+        <a href="#contact">اتصل بي</a>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section fade-in">
+        <h1 dir="rtl">مرحبًا بك في
+Code Courses !</h1>
+        <b dir="rtl">نحن نقدم لك خدمات تفاعلية ومحتوى مخصص لجعل تجربتك معنا رائعة
+<br>
+
+<b>وايضاً كورسات تدريبية.</b>
+            <br>
+<a href="Core.html" target="_blank_">
+        <button onclick="alert('انت الآن في الصفحة الرئيسية يمكنك تصفح جميع المشاريع الخاصــة بالمطور ')" class="btn btn-outline-primary" style=
+                "width:150px;
+                height:45px;
+                font-weight: bold;
+                font-size: 1.2em;
+                border-radius: 4px; margin-top:20px;">ابدأ الآن</button>
+</a>
+        <br>
+        <br>
+        <a href="Store-image.html" target="_blank">
+        <button onclick="alert('غير مكتمل بعد تحت الإنشاء و التطوير')" class="btn btn-outline-success">مـــعــرض الــــصــــور</button>
+            </a>
+        <br>
+        <br>
+        <img src="https://img.freepik.com/premium-photo/3d-cartoon-computer-programmer-character-generative-ai_914383-1802.jpg"
+              style="transition:1s; filter: drop-shadow(5px 10px 15px  #000); border-radius:10px; width:320px; height:270px; box-shadow: 0 0 20px 11px #032055;">
+        </section>
+
+<!--    ارشادات للمستخدمين -->
+
+     <!-- <section id="notes" class="section-dark" dir="auto">
+        <h2 style="text-align: center; color:#dff9fb;">ارشـــادات</h2>
+        <p dir="rtl"><b>قسم الإرشادات - تدل العلامات التاليه علي حالات المشروع </b></p>
+
+         <label dir="rtl"> 1 - 🟢 تدل علي ان المشروع مكتمل و مـــتــــاح
+              <sub dir="ltr">حاليًا متوفر 4 مشاريع فقط يمكنك تصفحها الآن</sub>
+             <br>
+         <label dir="rtl">2 - 🟡 تدل علي ان المشروع قيد الإنشاء
+             <sub dir="ltr">  يتوقع ان يتوفر المشروع 5 الأيام المقبلة</sub>
+             <br>
+         <label dir="rtl">3 - 🔴 تدل علي ان المشروع غير متاح الآن
+              <sub dir="ltr">  يتوقع ان يتوفر باقي  المشاريع اخر الشهر كحد اقـصــي</sub>
+             <br>
+        </section> -->
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section fade-in">
+        <h2 dir="rtl">بعض اعمالنا</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3 dir="rtl">🟢 مشروع : 1</h3>
+                <p dir="rtl">وصف المشروع 1 | مشروع رائع في مجال تطوير المواقع يعمل المشروع علي عرض صور ومعلومات عن هواتف ابل الذكية.<br>✮✮✮✮✮ : Rate</p>
+                <a href="APPLE Project.html" target="_blank">
+                <button class="btn btn-primary">معاينة الموقع</button>
+                    </a>
+            </div>
+            <div class="project-card">
+                <h3 dir="rtl">🟢 مشروع : 2</h3>
+                <p dir="rtl" >وصف المشروع 2 |مشروع رائع في مجال تطوير المواقع يعمل المشروع علي عرض احدث ساعات شركة ابل الذكية.<br>✮✮✮✮✮ : Rate</p>
+                <a href="Apple Watches.html" target="_blank">
+                <button class="btn btn-primary">معاينة الموقع</button>
+                    </a>
+            </div>
+            <div class="project-card">
+                <h3 dir="rtl">🟡 مشروع : 3</h3>
+                <p dir="rtl">وصف المشروع 3 | موقع يعرض تفاصيل جامعة الدلتا ووصف الأقـــســـام واكثر تـــــابــع لـلـمزيـــد.<br>✮✮ : Rate</p>
+                <a href="Delta University.html" target="_blank">
+                <button  class="btn btn-primary">معاينة الموقع</button>
+            </a>
+            </div>
+
+<!--            //////////////////////////////////////////////////-->
+
+
+                 <div class="project-card">
+                <h3 dir="rtl">🟢 مشروع : 4</h3>
+                <p dir="rtl">وصف المشروع 4 | موقع يعرض تصميم متقدم يحاكي عمل الفيزا متقدمة يمكنك تعديل و اضافة وتحديث الفيزا الخاصة بك.<br>✮✮ : Rate</p>
+                <a href="Visa.html" target="_blank">
+                <button  class="btn btn-primary" >عرض التفاصيل</button>
+
+            </a>
+            </div>
+
+
+<a href="my cv.pdf" target="_blank" dir="rtl">
+    <button class="btn btn-danger">تحميل السيرة الذاتية</button>
+</a>
+
+
+
+
+
+</div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section fade-in">
+
+        <h2 style="display: block;font-weight: bold;">عن الموقع</h2>
+        <p dir="rtl"><b> مطورون نقدم خدمات متميزة في تطوير المواقع والبرمجيات التفاعلية. فريقنا متخصص في بناء تجارب فريدة هذا الموقع خاص للمبرمج والمطور | محمد علاء محمد قام بتطويره لرفع جميع اعمالة علية , وايــضــا تـقوم هذه المنصة بتقديم  كـــورســات تدريبية.</b></p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section fade-in" dir="rtl">
+        <h2 style="display: block;font-weight: bold;">خدماتي</h2>
+        <p dir="rtl"><b><li>دورات في مجال تطوير تطبيقات سطح المكتب</li></b></p>
+        <p dir="rtl"><b><li>دورات في مجال تطوير تطبيقات الويب</li></b></p>
+        <p dir="rtl"><b><li>دورات متخصصة في مجال تطوير الوجهات الأمامية</li></b></p>
+        <p dir="rtl"><b><li>دورات متخصصة في مجال تطوير الوجهات الخلفية</li></b></p>
+        <p dir="rtl"><b><li>دورات اضافية لتطوير المهارات مثل دوره
+            <q>GIT</q> </li></b></p>
+    </section>
+
+
+
+<!-- Coruses Section -->
+<section id="core" class="section fade-in" dir="auto" style="height:auto; background-color:#ffffff;">
+
+    <b><h2 dir="ltr" style="display: block;font-weight: bold;">قسم الكورسات</h2></b>
+
+    <!-- إضافة مربع البحث -->
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="search-input" placeholder="ابحث عن الكورس..." style="padding: 8px; width: 100%;  box-shadow: 0 0 12px #000; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+    </div>
+
+    <!-- إضافة الفلترة -->
+<div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+    <select id="filter-date" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+        <option value="">تصفية حسب التاريخ</option>
+        <option value="newest">الأحدث</option>
+        <option value="oldest">الأقدم</option>
+    </select>
+    <select id="filter-type" style="padding: 8px; font-size: 16px; border-radius: 5px; border: 1px solid #ddd;">
+        <option value="">تصفية حسب النوع</option>
+        <option value="free">مجاني</option>
+        <option value="paid">مدفوع</option>
+    </select>
+</div>
+
+
+    <div id="filter-container" style="margin-bottom: 20px;">
+        <input type="text" id="search-coach" placeholder="ابحث عن دورات حسب المدرب..."
+            style="padding: 10px; font-size: 16px; width: 100%; box-shadow: 0 0 12px #000; max-width: 300px; margin: 0 auto; display: block; border: 1px solid #ccc; border-radius: 5px;">
+        <select id="course-type-filter" style="padding: 10px; font-size: 16px; width: 100%; box-shadow: 0 0 12px #000; max-width: 300px; margin: 20px auto; display: block; border: 1px solid #ccc; border-radius: 5px;">
+            <option value="">اختر نوع الدورة</option>
+            <option value="free">دورات مجانية</option>
+            <option value="paid">دورات مدفوعة</option>
+        </select>
+        <p id="error-message" style="color: red; text-align: center; display: none; font-weight: bold;">لم يتم العثور على دورات تطابق البحث.</p>
+    </div>
+
+    <div id="courses-container">
+        <!-- دورة HTML الأساسية -->
+        <div class="course-core" data-date="08‏/01‏/2021" data-type="free" data-coach="م / أســـامــة الـــزيـــرو">
+
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/6QAELgirvjs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCf_Az0D0kKIqg10xDDEkVYCXuFaQ" alt="دورة HTML" class="course-image">
+                <div class="course-info">
+                    <h3>اسم الكورس : دورة HTML الأساسية</h3>
+                    <p>الوصف : تعلم أساسيات HTML وتصميم صفحات الويب.</p>
+                    <b>اسم المدرب : م / أســـامــة الـــزيـــرو</b>
+
+                </div>
+            </div>
+            <a href="Videos.html" class="btn-core" target="_blank">ابدأ الآن</a>
+
+            <!-- زر لاستدعاء الدالة -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- استدعاء رسائل Bootstrap 5-->
+<a href="javascript:void(0);" onclick="INFO();" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
+
+<!-- دالة JavaScript -->
+
+
+        </div>
+
+        <!-- دورة CSS المتقدمة -->
+        <div class="course-core" data-date="01‏/02‏/2021" data-type="paid" data-coach="م / أســـامــة الـــزيـــرو">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/X1ulCwyhCVM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDkC-vNrtKaa-y2FSGQ9oGsv4XKdg" alt="دورة CSS" class="course-image">
+                <div class="course-info">
+                    <h3>دورة CSS المتقدمة</h3>
+                    <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status paid" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
+                    <p class="course-date">تاريخ الدورة: 01‏/02‏/2021</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+        </div>
+
+        <!-- دورة JavaScript للمبتدئين -->
+        <div class="course-core" data-date="26‏/05‏/2021" data-type="free" data-coach="م / أســـامــة الـــزيـــرو">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/GM6dQBmc-Xg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC7bmiWM5DxiYEk-iTeXzBPdnWbZg" alt="دورة JavaScript" class="course-image">
+                <div class="course-info">
+                    <h3>دورة JavaScript للمبتدئين</h3>
+                    <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b><div class="course-rating">
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+
+</div>
+
+<p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p class="course-date">تاريخ الدورة: 26‏/05‏/2021</p>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
+        </div>
+
+        <!-- الدورة الرابعة -->
+
+
+        <!-- دورة Python للمبتدئين -->
+        <div class="course-core" data-date="13‏/07‏/2023" data-type="free">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/mvZHDpCHphk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCnbMi_h1t-_fAQ2BEl0xZAhLGq1A" alt="دورة Python" class="course-image">
+                <div class="course-info">
+                    <h3>دورة Python للمبتدئين</h3>
+                    <p>تعلم البرمجة باستخدام Python من البداية.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
+                    <p class="course-date">تاريخ الدورة:
+                        13‏/07‏/2023</p>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLzMcBGfZo4-kAqvR7chET9uD7lx3s8Xto" class="btn-core" target="_blank">ابدأ الآن</a>
+        </div>
+
+        <!-- دورة React JS للمطورين -->
+        <div class="course-core" data-date="30‏/12‏/2023" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/3AJfX4Cd64c/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLBSdIcCFYeJBkf0Wm9BW5j-mf36jg" alt="دورة React" class="course-image">
+                <div class="course-info">
+                    <h3>دورة React JS للمطورين</h3>
+                    <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
+                    <b>قناه / Codezilla</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
+                    <p class="course-date">تاريخ الدورة:
+                        30‏/12‏/2023</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+        </div>
+
+        <!-- دورة تطوير تطبيقات الموبايل باستخدام Flutter -->
+        <div class="course-core" data-date="29‏/10‏/2020" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/lRercKJaAes/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAcYuWRPs2XNY_d6lZ5o62Yk_hd2Q" alt="دورة Flutter" class="course-image">
+                <div class="course-info">
+                    <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
+                    <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
+                    <b>قناه / AmmarAlkhatib </b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
+                    <p class="course-date">تاريخ الدورة:
+                        29‏/10‏/2020</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+        </div>
+
+        <!-- دورة git -->
+        <div class="course-core" data-date="11‏/06‏/2019" data-type="paid">
+            <div class="course-header">
+                <img src="https://i.ytimg.com/vi/ACOiGZoqC8w/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAj9Vlixs-ADB_93nSwiBZzDlMyjg" alt="دورة Unity" class="course-image">
+                <div class="course-info">
+                    <h3>دورة تطوير الألعاب باستخدام Unity</h3>
+                    <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
+                    <b>م / أســـامــة الـــزيـــرو</b>
+                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
+                    <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+        </div>
+
+    </section>
+
+
+<!-- RATES -->
+    <section id="rate" class="bg-dark text-white text-center py-5" style="margin-top:-20px;">
+        <h2>✮ التــــقـيـــمـــات ✮</h2>
+        <p dir="rtl"><b>تم تقييم  جميع المشاريع بمتوسط 5 نجوم كحد ادني و 10 كحد اقصي ومازال الموقع قيد التحديثات و التطورات.</b></p>
+    </section>
+<!--  قمسم المهارات  -->
+
+
+
+    <div class="container mt-4">
+        <h4 class="text-center" id="skil">Skills</h4>
+
+        <div class="row">
+            <!-- Python -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>Python</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                </div>
+            </div>
+
+            <!-- Django -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>Django</h5>
+                <div class="progress">
+                    <div class="custom-prog" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="30" aria-valuemax="100">30%</div>
+                </div>
+            </div>
+
+            <!-- C++ -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>C++</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-success-outline  success-outline" role="progressbar" style="width: 15%; background-color:#d35400;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15%</div>
+                </div>
+            </div>
+
+            <!-- FastAPI -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>FastAPI</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-warning text-light" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+            </div>
+
+            <!-- HTML -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>HTML</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+            </div>
+
+            <!-- CSS -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>CSS</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>JavaScript</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 30%; background-color:#535c68;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                </div>
+            </div>
+
+            <!-- Bootstrap -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5>Bootstrap</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-dark" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--    END     -->
+    <!-- Contact Section -->
+<section id="contact" class="section fade-in">
+    <h2 dir="rtl">اتصل بي</h2>
+    <form dir="rtl" id="contact-form" onsubmit="sendWhatsAppMessage(event)">
+        <div class="mb-3">
+            <label dir="rtl" for="name" class="form-label">الإســـم كـــامــلاً :</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label dir="rtl" for="email" class="form-label">الـــبــريـــد الإلـــكــتــروني :</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">رســـــالـــتـــك :</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">إرسال</button>
+    </form>
+</section>
+
+
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+
+        <p>  © 2024 جميع الحقوق محفوظة للمطور | محمد علاء محمد</p>
+    </footer>
+<script>
+let notificationsEnabled = false; // متغير لحفظ حالة الإشعارات
+
+// دالة تفعيل أو تعطيل الإشعارات
+function toggleNotifications() {
+    // إذا كانت الإشعارات مفعلة بالفعل
+    if (notificationsEnabled) {
+        notificationsEnabled = false;
+        showPopUp("تم تعطيل الإشعارات", "error"); // عرض رسالة Pop-up لتأكيد تعطيل الإشعارات
+    } else {
+        // طلب إذن للإشعارات
+        Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+                notificationsEnabled = true;
+                showPopUp("تم تمكين الإشعارات بنجاح", "success"); // عرض رسالة Pop-up لتأكيد تفعيل الإشعارات
+
+                // إرسال إشعار تلقائي عند تفعيل الإشعارات
+                const notification = new Notification('إشعار جديد', {
+                    body: "تم تمكين الإشعارات بنجاح. اضغط لفتح المزيد.",
+                    icon: "https://cdn-icons-png.flaticon.com/512/4762/4762311.png",  // يمكنك استبدال الأيقونة
+                    timestamp: new Date().toLocaleString() // إضافة الوقت للإشعار
+                });
+
+                // إضافة حدث عند النقر على الإشعار
+                notification.onclick = function () {
+                    window.open("https://mohammed-alaa-mohammed.github.io/Portfolio/", "_blank"); // فتح رابط عند النقر على الإشعار
+                };
+            } else {
+                showPopUp("تم رفض الإذن بالإشعارات.", "warning"); // عرض رسالة Pop-up لرفض الإذن
+            }
+        }).catch((error) => {
+            console.error("حدث خطأ أثناء طلب الإذن:", error);
+            showPopUp("حدث خطأ أثناء طلب الإشعار.", "error"); // عرض رسالة Pop-up عند حدوث خطأ
+        });
+    }
+}
+
+// دالة لعرض الرسائل المنبثقة (Pop-up)
+function showPopUp(message, type) {
+    let color = "#28a745"; // اللون الافتراضي (نجاح)
+
+    if (type === "error") {
+        color = "#dc3545"; // اللون عند حدوث خطأ
+    } else if (type === "warning") {
+        color = "#ffc107"; // اللون عند التحذير
+    }
+
+    Toastify({
+        text: message,
+        duration: 3000, // مدة ظهور الرسالة 3 ثوانٍ
+        gravity: "top", // تحديد مكان ظهور الرسالة: أعلى الصفحة
+        position: "right", // تحديد مكان الرسالة: على اليمين
+        backgroundColor: color, // تحديد لون خلفية الرسالة
+        close: true, // إظهار زر لإغلاق الرسالة
+        stopOnFocus: true, // إيقاف الرسالة عند التفاعل معها
+    }).showToast();
+}
+
+// ====================================================================
+
+function sendWhatsAppMessage(event) {
+        event.preventDefault(); // منع إرسال النموذج بالطريقة التقليدية
+
+        // الحصول على البيانات من النموذج
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // الرقم الذي سيتم إرسال الرسالة إليه (استبدل بالرقم الذي تريده)
+        const phoneNumber = "+966538886324"; // الرقم الذي سيتم إرسال الرسالة إليه عبر واتساب
+
+        // نص الرسالة الذي سيتم إرساله
+        const textMessage = `اسم المستخدم: ${name}\nالبريد الإلكتروني: ${email}\nالرسالة: ${message}`;
+
+        // رابط واتساب مع النص
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textMessage)}`;
+
+        // فتح رابط واتساب لبدء المحادثة
+        window.open(whatsappLink, '_blank');
+    }
+// ====================================================================
+// جزء خاص بالتواصل الفورم -  النموذج
+        // Form Validation
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (!name || !email || !message) {
+                event.preventDefault();
+                alert("يرجى تعبئة جميع الحقول.");
+            }
+        });
+// ========================================================================
+
+    // دالة البحث عن الكورسات
+    document.getElementById('search-input').addEventListener('input', function() {
+        var searchTerm = this.value.toLowerCase();
+        var courseSections = document.querySelectorAll('.course-core');
+
+        courseSections.forEach(function(course) {
+            var courseTitle = course.querySelector('h3').textContent.toLowerCase();
+            var courseDescription = course.querySelector('p').textContent.toLowerCase();
+
+            // إخفاء الكورس إذا لم يتطابق مع البحث
+            if (courseTitle.includes(searchTerm) || courseDescription.includes(searchTerm)) {
+                course.style.display = 'block';
+            } else {
+                course.style.display = 'none';
+            }
+        });
+    });
+
+    // ====================================================================
+
+    // داله الفلترة و البحث
+    document.getElementById('search-input').addEventListener('input', function () {
+        const query = this.value.toLowerCase();
+        const courses = document.querySelectorAll('.course-core');
+        courses.forEach(course => {
+            const title = course.querySelector('h3').textContent.toLowerCase();
+            course.style.display = title.includes(query) ? 'block' : 'none';
+        });
+    });
+
+    document.getElementById('filter-date').addEventListener('change', function () {
+        const courses = Array.from(document.querySelectorAll('.course-core'));
+        const value = this.value;
+
+        if (value === 'newest') {
+            courses.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+        } else if (value === 'oldest') {
+            courses.sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date));
+        }
+
+        const container = document.getElementById('courses-container');
+        container.innerHTML = '';
+        courses.forEach(course => container.appendChild(course));
+    });
+
+    document.getElementById('filter-type').addEventListener('change', function () {
+        const value = this.value;
+        const courses = document.querySelectorAll('.course-core');
+        courses.forEach(course => {
+            course.style.display = (value === '' || course.dataset.type === value) ? 'block' : 'none';
+        });
+    });
+
+    // ====================================================================
+// دالة زر تفاصيل الكورس
+function INFO() {
+    const courseDetails = `
+        <strong>اسم الكورس :  </strong> دورة HTML الأساسية<br><br>
+        <strong>الوصف :  </strong> تعلم أساسيات HTML وتصميم صفحات الويب.<br><br>
+        <strong>اسم المدرب : </strong> م / أســـامــة الـــزيـــرو<br><br>
+        <strong>تقييم الدورة : </strong> 4.5/5<br><br>
+        <strong>الحالة : </strong> متوفر - 15 فيديو فقط<br><br>
+        <strong>سعر الكورس : </strong> مجاني - يتوفر مشغل خاص للكورس<br><br>
+        <strong>تاريخ الدورة : </strong> 08‏/01‏/2021<br><br>
+        <strong>عدد الدروس : </strong> 37<br><br>
+        <strong>عدد المسَجلين : </strong> 3
+    `;
+
+    // Create modal container
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '50%';
+    modal.style.left = '50%';
+    modal.style.transform = 'translate(-50%, -50%)';
+    modal.style.backgroundColor = '#ffffff';
+    modal.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+    modal.style.padding = '20px';
+    modal.style.borderRadius = '10px';
+    modal.style.zIndex = '1000';
+    modal.style.width = '350px';
+    modal.style.textAlign = 'right';
+    modal.style.lineHeight = '1.8';
+    modal.style.fontFamily = 'Arial, sans-serif';
+    modal.style.fontSize = '14px';
+    modal.style.direction = 'rtl'; // Set text direction to RTL
+    modal.innerHTML = `
+        <h2 style="margin-bottom: 15px; color: #333; text-align: center;">معلومات الدورة</h2>
+        <p style="color: #555;">${courseDetails}</p>
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="closeModalButton" style="background-color: #f44336; color: #ffffff; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 14px;">إغلاق</button>
+        </div>
+    `;
+
+    // Add modal to document
+    document.body.appendChild(modal);
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.zIndex = '999';
+    overlay.id = 'modalOverlay';
+    document.body.appendChild(overlay);
+
+    // Add event listener to close button
+    document.getElementById('closeModalButton').addEventListener('click', closeModal);
+
+    // Add event listener to overlay
+    overlay.addEventListener('click', closeModal);
+
+    // Close modal function
+    function closeModal() {
+        // Smooth fade-out effect
+        modal.style.transition = 'opacity 0.3s';
+        overlay.style.transition = 'opacity 0.3s';
+        modal.style.opacity = '0';
+        overlay.style.opacity = '0';
+
+        setTimeout(() => {
+            document.body.removeChild(modal);
+            document.body.removeChild(overlay);
+        }, 300);
+    }
+}
+
+// ====================================================================
+
+// دالة الفلترة حسب المدرب
+document.getElementById('search-coach').addEventListener('input', function () {
+        let searchQuery = this.value.toLowerCase();
+        let courses = document.querySelectorAll('.course-core');
+        let found = false;
+
+        // التحقق من كل دورة ومقارنتها مع المدرب المطلوب
+        courses.forEach(course => {
+            let coach = course.getAttribute('data-coach').toLowerCase();
+            if (coach.includes(searchQuery)) {
+                course.style.display = 'block';
+                found = true;
+            } else {
+                course.style.display = 'none';
+            }
+        });
+
+        // عرض أو إخفاء رسالة الخطأ
+        let errorMessage = document.getElementById('error-message');
+        if (found) {
+            errorMessage.style.display = 'none';
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+
+    // دالة الفلترة حسب نوع الدورة
+    document.getElementById('course-type-filter').addEventListener('change', function () {
+        let selectedType = this.value;
+        let courses = document.querySelectorAll('.course-core');
+        let found = false;
+
+        // التحقق من نوع الدورة
+        courses.forEach(course => {
+            let type = course.getAttribute('data-type');
+            if (selectedType === '' || type === selectedType) {
+                course.style.display = 'block';
+                found = true;
+            } else {
+                course.style.display = 'none';
+            }
+        });
+
+        // عرض أو إخفاء رسالة الخطأ
+        let errorMessage = document.getElementById('error-message');
+        if (found) {
+            errorMessage.style.display = 'none';
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+
+
+
+    document.getElementById("filter-date").addEventListener("change", filterCourses);
+    document.getElementById("filter-type").addEventListener("change", filterCourses);
+
+    function filterCourses() {
+        const dateFilter = document.getElementById("filter-date").value;
+        const typeFilter = document.getElementById("filter-type").value;
+        const courses = document.querySelectorAll(".course-core");
+
+        courses.forEach(course => {
+            let showCourse = true;
+
+            // تصفية حسب النوع
+            if (typeFilter && course.getAttribute("data-type") !== typeFilter) {
+                showCourse = false;
+            }
+
+            // تصفية حسب التاريخ
+            const courseDate = new Date(course.getAttribute("data-date"));
+            if (dateFilter === "newest" && courseDate < new Date()) {
+                showCourse = false;
+            } else if (dateFilter === "oldest" && courseDate > new Date()) {
+                showCourse = false;
+            }
+
+            // إظهار أو إخفاء الدورة بناءً على الفلاتر
+            if (showCourse) {
+                course.style.display = "block";
+            } else {
+                course.style.display = "none";
+            }
+        });
+    }
+
+    // ====================================================================
+    </script>
+
+</html>
+
+
