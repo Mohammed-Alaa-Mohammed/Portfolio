@@ -66,7 +66,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!--  لون  شريط الويب  -->
     <meta name="theme-color" content="#00000f">
-    <title>Free Code Courses</title>
+    <title>Code Courses | Mohammed Alaa</title>
     <!--  ايقونة الموقع  -->
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/3d-applications/128/app_icons_web_development___logo_chrome_website_browser_google.png">
 <!--    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/cyber-security-vol-2-1/256/Website_Security.png">-->
@@ -81,7 +81,6 @@
 <link rel="stylesheet" href="style_Home_Page.css">
 
 
-    
 </head>
 
     <!-- Navbar -->
@@ -128,8 +127,8 @@ Code Courses !</h1>
         <br>
         <br>
         <!-- https://img.freepik.com/premium-photo/3d-cartoon-computer-programmer-character-generative-ai_914383-1802.jpg -->
-        <img src="https://img.freepik.com/premium-photo/3d-cartoon-computer-programmer-character-generative-ai_914383-1802.jpg"
-              style="transition:1s; filter: drop-shadow(5px 10px 15px  #000); border-radius:5px; width:300px; height:320px; box-shadow: 0 0 21px 5px #444d5f;">
+        <img src="My_img.jpeg"
+            style="transition:1s; filter: drop-shadow(5px 10px 15px  #000); border-radius:5px; width:300px; height:320px; box-shadow: 0 0 21px 5px #444d5f;">
         </section>
 
 <!--    ارشادات للمستخدمين -->
@@ -266,7 +265,9 @@ Code Courses !</h1>
                 <div class="course-info">
                     <h3>اسم الكورس : دورة HTML الأساسية</h3>
                     <p>الوصف : تعلم أساسيات HTML وتصميم صفحات الويب.</p>
-                    <b>اسم المدرب : م / أســـامــة الـــزيـــرو</b>
+                    <b>اسم المدرب :  أســـامــة الـــزيـــرو</b>
+                    <p style="color: #4CAF50;" id="P-Free-no">الحالة : متوفر</p>
+
 
                 </div>
             </div>
@@ -275,9 +276,6 @@ Code Courses !</h1>
             <!-- زر لاستدعاء الدالة -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- استدعاء رسائل Bootstrap 5-->
 <a href="javascript:void(0);" onclick="INFO();" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
-
-<!-- دالة JavaScript -->
-
 
         </div>
 
@@ -289,13 +287,15 @@ Code Courses !</h1>
                     <h3>دورة CSS المتقدمة</h3>
                     <p>إتقان تنسيق الصفحات باستخدام CSS.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
-                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
-                    <p class="course-status paid" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p>
-                    <p class="course-date">تاريخ الدورة: 01‏/02‏/2021</p>
+                    <!-- <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p> -->
+                    <p  id="P-Free-no" style="color: #4CAF50;">الحالة : متوفر</p>
+                    <!-- <p class="course-status paid" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">70$</p> -->
+                    <!-- <p class="course-date">تاريخ الدورة: 01‏/02‏/2021</p> -->
                 </div>
             </div>
-            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+            <a href="https://youtube.com/playlist?list=PLDoPjvoNmBAzjsz06gkzlSrlev53MGIKe&feature=shared" class="btn-core" target="_blank">ابدأ الآن</a>
+            <a href="javascript:void(0);" onclick="confirm('قد التطوير من المتقوع ان يتوفر في 15 مارس')" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
+
         </div>
 
         <!-- دورة JavaScript للمبتدئين -->
@@ -306,16 +306,18 @@ Code Courses !</h1>
                     <h3>دورة JavaScript للمبتدئين</h3>
                     <p>تعلم أساسيات البرمجة باستخدام JavaScript.</p>
                     <b>م / أســـامــة الـــزيـــرو</b><div class="course-rating">
-                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
+                    <!-- <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p> -->
 
 </div>
 
-<p style="color: #4CAF50;">الحالة : متوفر</p>
-                    <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
-                    <p class="course-date">تاريخ الدورة: 26‏/05‏/2021</p>
+<p style="color: #EA2027;"  id="P-Free-no" >الحالة : غير متوفر</p>
+                    <!-- <p class="course-status free" style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p> -->
+                    <!-- <p class="course-date">تاريخ الدورة: 26‏/05‏/2021</p> -->
                 </div>
             </div>
-            <a href="https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv" class="btn-core" target="_blank">ابدأ الآن</a>
+            <a href="#core" class="btn-core">حجز مقعد</a> <!-- https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv java script -->
+            <a href="javascript:void(0);" onclick="confirm('قد التطوير من المتقوع ان يتوفر في 15 مارس')" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
+
         </div>
 
         <!-- الدورة الرابعة -->
@@ -329,14 +331,16 @@ Code Courses !</h1>
                     <h3>دورة Python للمبتدئين</h3>
                     <p>تعلم البرمجة باستخدام Python من البداية.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
-                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
-                    <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p>
-                    <p class="course-date">تاريخ الدورة:
-                        13‏/07‏/2023</p>
+                    <!-- <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p> -->
+                    <p  id="P-Free-no" style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <!-- <p class="course-status free"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">مجاني</p> -->
+                    <!-- <p class="course-date">تاريخ الدورة: -->
+                        <!-- 13‏/07‏/2023</p> -->
                 </div>
             </div>
-            <a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLzMcBGfZo4-kAqvR7chET9uD7lx3s8Xto" class="btn-core" target="_blank">ابدأ الآن</a>
+            <a href="#core" class="btn-core">حجز مقعد</a>
+            <a href="javascript:void(0);" onclick="confirm('قد التطوير من المتقوع ان يتوفر في 20 مارس')" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
+
         </div>
 
         <!-- دورة React JS للمطورين -->
@@ -346,15 +350,16 @@ Code Courses !</h1>
                 <div class="course-info">
                     <h3>دورة React JS للمطورين</h3>
                     <p>إتقان استخدام React لبناء تطبيقات ويب تفاعلية.</p>
-                    <b>قناه / Codezilla</b>
-                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
-                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">100$</p>
-                    <p class="course-date">تاريخ الدورة:
-                        30‏/12‏/2023</p>
+                    <b>اسلام / Codezilla</b>
+                    <!-- <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p> -->
+                    <p  id="P-Free-no" style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <!-- <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">$</p> -->
+                    <!-- <p class="course-date">تاريخ الدورة: -->
+                        <!-- 30‏/12‏/2023</p> -->
                 </div>
             </div>
-            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+            <a href="#core" class="btn-core">حجز مقعد</a>
+            <a href="javascript:void(0);" onclick="confirm('قد التطوير من المتقوع ان يتوفر في 23 مارس')" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
         </div>
 
         <!-- دورة تطوير تطبيقات الموبايل باستخدام Flutter -->
@@ -365,14 +370,15 @@ Code Courses !</h1>
                     <h3>دورة تطوير تطبيقات الموبايل باستخدام Flutter</h3>
                     <p>تعلم تطوير تطبيقات الهواتف المحمولة باستخدام Flutter.</p>
                     <b>قناه / AmmarAlkhatib </b>
-                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
-                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p>
-                    <p class="course-date">تاريخ الدورة:
-                        29‏/10‏/2020</p>
+                    <!-- <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p> -->
+                    <p id="P-Free-no"  style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <!-- <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">80$</p> -->
+                    <!-- <p class="course-date">تاريخ الدورة: -->
+                        <!-- 29‏/10‏/2020</p> -->
                 </div>
             </div>
-            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+            <a href="#core" class="btn-core">حجز مقعد</a>
+            <a href="javascript:void(0);" onclick="confirm('قد التطوير من المتقوع ان يتوفر في 20 مارس')" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
         </div>
 
         <!-- دورة git -->
@@ -383,13 +389,14 @@ Code Courses !</h1>
                     <h3>دورة تطوير الألعاب باستخدام Unity</h3>
                     <p>تعلم كيفية تطوير الألعاب باستخدام محرك Unity.</p>
                     <b>م / أســـامــة الـــزيـــرو</b>
-                    <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p>
-                    <p style="color: #EA2027;">الحالة : غير متوفر</p>
-                    <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p>
-                    <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p>
+                    <!-- <p style="margin-top:15px;">تقييم الدورة: <span>4.5/5</span></p> -->
+                    <p  id="P-Free-no" style="color: #EA2027;">الحالة : غير متوفر</p>
+                    <!-- <p class="course-status paid"  style="font-weight: bold; color: #4CAF50; margin-top:10px; margin-right:10px;">120$</p> -->
+                    <!-- <p class="course-date">تاريخ الدورة: 11‏/06‏/2019</p> -->
                 </div>
             </div>
-            <a href="index.html" class="btn-core" target="_blank">إشترك الآن</a>
+            <a href="#core" class="btn-core">حجز مقعد</a>
+            <a href="javascript:void(0);" onclick="confirm('قد التطوير من المتقوع ان يتوفر في 20 مارس')" class="btn btn-outline-warning" dir="rtl" id="btn-info">تفاصيل الكورس</a>
         </div>
 
     </section>
@@ -507,7 +514,7 @@ Code Courses !</h1>
     <footer class="footer">
 
 
-        <p>  © 2024 - 2025 جميع الحقوق محفوظة للمطور | محمد علاء محمد</p>
+        <p>  © 2024 جميع الحقوق محفوظة للمطور | محمد علاء محمد</p>
     </footer>
 <script>
 let notificationsEnabled = false; // متغير لحفظ حالة الإشعارات
