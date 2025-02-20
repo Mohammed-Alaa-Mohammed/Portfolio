@@ -357,14 +357,14 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         }
     
         .btn-core  {
-            width: 100px;
-            padding: auto;
+            width: 80px;
+            padding: 17px 35px;
             font-size: 20px;
             text-align: center;
             font-family: none;/*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif*/
         }
 
-
+     
         .course-image {
             width: 100%;
             max-width: 450px;
