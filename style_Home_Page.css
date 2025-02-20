@@ -385,7 +385,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
     
         .btn-core ,.btn-outline-warning{ /* جزء مهم */
             font-size: 13px;
-            width:30%;
+            width:50%;
         }
     
         .course-image {
