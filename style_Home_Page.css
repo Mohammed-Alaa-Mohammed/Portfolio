@@ -357,14 +357,14 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         }
     
         .btn-core  {
-            width: 80px;
+            width: 100px;
             padding: 17px 35px;
             font-size: 20px;
             text-align: center;
             font-family: none;/*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif*/
         }
 
-     
+
         .course-image {
             width: 100%;
             max-width: 450px;
@@ -383,8 +383,9 @@ font-size: 0.9rem;  /* حجم خط مناسب */
             margin: 10px 0;
         }
     
-        .btn-core ,.btn-outline-warning{
+        .btn-core ,.btn-outline-warning{ /* جزء مهم */
             font-size: 13px;
+            width:30%;
         }
     
         .course-image {
@@ -394,17 +395,18 @@ font-size: 0.9rem;  /* حجم خط مناسب */
     
     @media (max-width: 490px) {
         .container-core {
-            padding: 10px;
+            padding: 12px;
             
         }
     
         .course-core {
             padding: 10px;
             margin: 10px 0;
+
         }
     
-        .btn-core , btn-outline-warning{ /* مهم للهاتف */
-            font-size: 15px;
+        .btn-core{ /* مهم للهاتف */
+            font-size: 14px;
             padding: 15px 15px;
             font-weight:bold;
             /* width:30px; */
