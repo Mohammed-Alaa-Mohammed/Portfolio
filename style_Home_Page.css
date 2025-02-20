@@ -367,9 +367,9 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         }
 
         .btn-outline-warning{
-            padding:14px 20px;
+            padding:auto;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            width:auto; 
+            width:200px;
 /* خاص بالزر */
         }
 
