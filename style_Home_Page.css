@@ -337,8 +337,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         transform: scale(1.06);
         color: floralwhite;
         box-shadow: 0 0 14px 3px  #0d1242;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    }
+     }
 
 
 
@@ -404,7 +403,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
             margin: 10px 0;
         }
 
-        .btn-core , btn-outline-warning{ /* مهم للهاتف */
+        .btn-core{ /* مهم للهاتف */
             font-size: 15px;
             padding: 15px 15px;
             font-weight:bold;
@@ -414,6 +413,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         .btn-outline-warning{
             font-size: 15px;
             border-radius: 5px;
+            width:auto;
         }
 
         .course-image {
