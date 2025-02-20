@@ -358,10 +358,10 @@ font-size: 0.9rem;  /* حجم خط مناسب */
     
         .btn-core  {
             width: 100px;
-            padding: 17px 35px;
-            font-size: 20px;
+            padding: 25px 35px;
+            font-size: 50px;
             text-align: center;
-            font-family: none;/*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif*/
+            font-family: bold;/*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif*/
         }
 
 
@@ -407,7 +407,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         }
     
         .btn-core{ /* مهم للهاتف */
-            font-size: 140px;
+            font-size: 14px;
             padding: 15px 15px;
             font-weight:bold;
             /* width:30px; */
