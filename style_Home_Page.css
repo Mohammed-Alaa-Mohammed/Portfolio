@@ -374,7 +374,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
     
     @media (max-width: 780px) {
         .container-core {
-            padding: 15px;
+            padding: 10px;
         }
         
     
@@ -384,8 +384,9 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         }
     
         .btn-core ,.btn-outline-warning{ /* جزء مهم */
-            font-size: 13px;
+            font-size: 100px;
             width:50%;
+            padding:12px;
         }
     
         .course-image {
