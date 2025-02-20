@@ -352,19 +352,29 @@ font-size: 0.9rem;  /* حجم خط مناسب */
     
         .course-core {
             width: 100%;
-            border-radius: 5px;
+            border-radius: 4px;
             box-shadow: 0 -.1px 5px 2px #fff;
         }
     
         .btn-core  {
-            width: 100px;
+            width: 80px;
             padding: 17px 35px;
             font-size: 20px;
             text-align: center;
             font-family: none;/*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif*/
         }
 
+        .btn-outline-warning {
+            width: 110px;
+            text-align: center;
 
+        }
+    
+        .btn-outline-warning{
+            padding:18px 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
         .course-image {
             width: 100%;
             max-width: 450px;
@@ -383,7 +393,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
             margin: 10px 0;
         }
     
-        .btn-core ,btn-outline-warning{
+        .btn-core ,.btn-outline-warning{
             font-size: 13px;
         }
     
@@ -394,7 +404,7 @@ font-size: 0.9rem;  /* حجم خط مناسب */
     
     @media (max-width: 490px) {
         .container-core {
-            padding: 12px;
+            padding: 10px;
             
         }
     
