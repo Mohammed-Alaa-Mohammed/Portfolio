@@ -357,9 +357,9 @@ font-size: 0.9rem;  /* حجم خط مناسب */
         }
     
         .btn-core  {
-            width: 80px;
-            padding: 17px 35px;
-            font-size: 14px;
+            width: 100px;
+            padding: 17px 17px;
+            font-size: 20px;
             text-align: center;
             font-family: none;/*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif*/
         }
